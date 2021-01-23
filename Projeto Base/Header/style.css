@@ -1,4 +1,5 @@
 * {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -20,14 +21,39 @@
 }
 
 .content input {
+    width:80px;
+    background: #FAFAFA;
+    padding-right:10px;
+    border-style: none;
+}
+
+.content input:focus{
+    border: none;
+    border-style: none;
+    outline: none;
+}
+
+.container-busca{
     width: 215px;
     height: 28px;
-
-    border-color: #dcdcdc;
-    border-style: solid;
-    border-radius: 2px;
-
     background: #FAFAFA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px #dcdcdc;
+    border-radius: 2px; 
+}
+
+#busca{
+    width:0px;
+    display: flex;
+    padding-left: 29px;
+    justify-content: center;
+}
+
+#busca img{
+    width: 10px;
+    margin-right:5px;
 }
 
 .menu {
