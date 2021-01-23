@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "FilePath": "c:\\Users\\Lameck\\Desktop\\Instadev-06\\Instadev-06.csproj",
+=======
+  "FilePath": "c:\\Users\\Taila\\Desktop\\Dev\\Instadev-06\\Instadev-06.csproj",
+>>>>>>> footer
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -14392,6 +14396,7 @@
   "RootNamespace": "Instadev_06",
   "Documents": [
     {
+<<<<<<< HEAD
       "FilePath": "c:\\Users\\Lameck\\Desktop\\Instadev-06\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
@@ -14418,12 +14423,45 @@
     },
     {
       "FilePath": "c:\\Users\\Lameck\\Desktop\\Instadev-06\\Views\\_ViewImports.cshtml",
+=======
+      "FilePath": "c:\\Users\\Taila\\Desktop\\Dev\\Instadev-06\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Taila\\Desktop\\Dev\\Instadev-06\\Views\\Home\\Privacy.cshtml",
+      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Taila\\Desktop\\Dev\\Instadev-06\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Taila\\Desktop\\Dev\\Instadev-06\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Taila\\Desktop\\Dev\\Instadev-06\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Taila\\Desktop\\Dev\\Instadev-06\\Views\\_ViewImports.cshtml",
+>>>>>>> footer
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
+<<<<<<< HEAD
       "FilePath": "c:\\Users\\Lameck\\Desktop\\Instadev-06\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
+=======
+      "FilePath": "c:\\Users\\Taila\\Desktop\\Dev\\Instadev-06\\Views\\Shared\\Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
+>>>>>>> footer
       "FileKind": "mvc"
     }
   ],
