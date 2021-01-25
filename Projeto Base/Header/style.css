@@ -10,8 +10,8 @@
     height: 3.3125em;
 }
 
-.content {
-    width: 95%;
+.topo-container {
+    width: 935px;
     height: 100%;
     max-width: 75em;
     margin: auto;
@@ -20,20 +20,25 @@
     align-items: center;
 }
 
-.content input {
+.topo-container input {
     width:80px;
     background: #FAFAFA;
-    padding-right:10px;
     border-style: none;
 }
 
-.content input:focus{
+.topo-container input::placeholder {
+    color: #afafaf;
+    opacity: 1; /* Correção Firefox*/
+  }
+
+.topo-container input:focus{
     border: none;
     border-style: none;
     outline: none;
+    align-self: start;
 }
 
-.container-busca{
+.busca-container {
     width: 215px;
     height: 28px;
     background: #FAFAFA;
@@ -41,11 +46,11 @@
     align-items: center;
     justify-content: center;
     border: solid 1px #dcdcdc;
-    border-radius: 2px; 
+    border-radius: 2px;
+    margin-left: 77px;
 }
 
 #busca{
-    width:0px;
     display: flex;
     padding-left: 29px;
     justify-content: center;
@@ -64,9 +69,30 @@
 }
 
 .menu li {
-    margin: 0 5px;
+    margin: 0 13px;
+}
+
+.menu li:first-child{
+    margin-left: 0px;
+}
+
+.menu li:last-child{
+    margin-right: 0px;
 }
 
 .menu li a img {
     max-width: 21.18em;
+}
+
+/* JavaScript Classes */
+.buscando {
+    justify-content: initial;
+}
+
+.buscando #busca {
+    padding-left: 10px;
+}
+
+.buscando #busca input {
+    width: 185px;
 }
