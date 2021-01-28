@@ -1,0 +1,369 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #FAFAFA;
+}
+
+.topo {
+    width: 100%;
+    height: 3.3125em;
+}
+
+.topo-container {
+    width: 1620px;
+    height: 100%;
+    max-width: 75em;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topo-container input {
+    width:80px;
+    background: #FAFAFA;
+    border-style: none;
+}
+
+.topo-container input::placeholder {
+    color: #afafaf;
+    opacity: 1; /* Correção Firefox*/
+  }
+
+.topo-container input:focus{
+    border: none;
+    border-style: none;
+    outline: none;
+    align-self: start;
+}
+
+.busca-container {
+    width: 215px;
+    height: 28px;
+    background: #FAFAFA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px #dcdcdc;
+    border-radius: 2px;
+    margin-left: 77px;
+}
+
+#busca{
+    display: flex;
+    padding-left: 29px;
+    justify-content: center;
+}
+
+#busca img{
+    width: 10px;
+    margin-right:5px;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu li {
+    margin: 0 13px;
+}
+
+.menu li:first-child{
+    margin-left: 0px;
+}
+
+.menu li:last-child{
+    margin-right: 0px;
+}
+
+.menu li a img {
+    max-width: 21.18em;
+}
+
+/* JavaScript Classes */
+.buscando {
+    justify-content: initial;
+}
+
+.buscando #busca {
+    padding-left: 10px;
+}
+
+.buscando #busca input {
+    width: 185px;
+}
+
+.rodape{
+    width: 100%;
+    max-width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+}
+.campo{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 2em;
+}
+.rodape ul{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.rodape a{
+    color: #909090;
+    text-decoration: none;
+    font-size: 12px;
+    padding: 0.5em 0.5em;
+
+}
+.rodape a:hover{
+    background-color: #e9e9e9;
+}
+.direitos{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1em 2.5em;
+}
+
+.espacinho{
+    display: flex;
+    max-width: 100%;
+    height: 24px;
+}
+
+.content{
+    width: 610px;
+    height: 113px;
+    margin: auto;
+    background-color:#FFFFFF;
+    border: solid 1px #F1F1F1;
+}
+.flex-center-bt{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.amigos ul{
+    list-style-type: none;
+}
+.amigoOn1{
+    margin-left: 16px;
+    margin-right: 22px;
+}
+.amigoOn2{
+    margin-right: 20px;
+}
+.amigoOn3{
+    margin-right: 20px;
+}
+.amigoOn4{
+    margin-right: 5px;
+}
+.amigoOn5{
+    margin-right: 22px;
+}
+.amigoOn6{
+    margin-right: 22px;
+    background-color: #FFFFFF;
+}
+.amigoOn7{
+    background-color: #FFFFFF;
+}
+.do-lado{
+    background-color: blue;
+    
+}
+.do-lado h3{
+    font-size: 12px;
+}
+.amigos ul li h1{
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.espacito{
+    width: 100%;
+    height: 38px;
+}
+
+.container{
+    width: 610px;
+    height: 166px;
+    margin: auto;
+    background-color:#FFFFFF;
+    border: solid 1px #F1F1F1;
+}
+.flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.Postar ul{
+    list-style-type: none;
+    width: 100%;
+}
+.Postar ul img{
+    padding-left: 26px;
+    padding-top: 21px;
+}
+.Postar ul h3{
+    padding-left: 18px;
+    padding-top: 9px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+.digite input{
+    width: 231px;
+    height: 27px;
+    margin-top: 24px;
+    margin-left: 27px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.escolher label{
+    width: 157px;
+    height: 27px;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    color:#7D7D7D;
+    font-weight: 600;
+    background-color: #D1D1D1;
+    position:absolute;
+    top:320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+.do-lado{
+    margin-left: 175px;
+}
+.do-lado h2{
+    font-size: 12px;
+}
+.escolher input[type='file']{
+    display: none;
+}
+
+.Adicionar-conteudo button{
+    width: 140px;
+    height: 27px;
+    background-color: #2686CC;
+    margin-top: 23px;
+    margin-left: 177px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+}
+
+.post_gabigordo{
+    width: 610px;
+    height: 610px;
+    margin: auto;
+    background-color:#FFFFFF;
+    border: solid 1px #F1F1F1;   
+}
+.imagem{
+    margin-top: 13px;
+    margin-left: 16px;
+    font-size: 12px;
+}
+
+.post_gabigordo h3{
+    margin-left: 13px;
+    font-size: 13px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.post_gabigordo h5{
+    margin-left: 13px;
+    font-size: 13px;
+    font-weight: 400;
+    font-style: normal;
+}
+.foto{
+    margin-top: 16px;
+    max-width: 610px;
+    margin-bottom: 14.08px;
+}
+
+.coracao label{
+    margin-left: 21.33px;
+}
+.coracao input[type='checkbox']{
+    display: none;
+}
+.balao{
+    margin-left: 19.33px;
+}
+.comentar input{
+    width: 220px;
+    border: none;
+    border-bottom-style: solid;
+    margin-left: 17px;
+    font-size: 12px;
+    font-weight: 400;
+    
+}
+.text{
+    margin-top: 3px;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+.coments li{
+    list-style: none;
+}
+.coments li h4{
+    font-size: 13px;
+    font-weight: 600;
+    margin-right: 20px;
+    color: black;
+}
+
+.coments h2{
+    font-size: 13px;
+    font-weight: 400;
+    color:#2686CC;
+    margin-right: 20px;
+    
+}
+.coments h6{
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 4px;
+    color: black;
+}
+.coments li{
+    list-style: none;
+}
+.coments h4{
+    font-size: 13px;
+    font-weight: 600;
+    margin-right: 30px;
+    margin-left: 20px;
+    color: black;
+    list-style: none;
+}
+.space{
+    width: 100%;
+    height: 55px;
+    display: flex;
+}
