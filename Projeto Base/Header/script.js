@@ -1,9 +1,9 @@
-var barraDeBusca = document.querySelector(".busca-container");
+var barraDeBusca = document.querySelector(".search-container");
 
 document.addEventListener("click", function(event) {
-    if(event.target.closest("#busca")) {
-        barraDeBusca.classList.add("buscando");
+    if(event.target.closest("#search")) {
+        barraDeBusca.classList.add("searching");
         return
     }
-    barraDeBusca.classList.remove("buscando");
+    barraDeBusca.classList.remove("searching");
 })
