@@ -20,9 +20,13 @@ body{
 
 }
 
+.conect p:hover{
+    text-decoration: underline;
+}
+
 .cadastro {
     width: 342px;
-    height: 461px;
+    height: 531px;
     font-family: Arial, Helvetica, sans-serif;
  /* AQUI FIZ ALTERÇÃO. DA COR BRANCA PARA O PRETO QUE FEZ O CONTORNO DA */
   
@@ -71,13 +75,14 @@ body{
     margin-top:10px;
 }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=date] {
   width: 267px;
   height: 35px;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
+  color: #909090;
   
 }
 
@@ -85,9 +90,8 @@ input[type=text], input[type=password] {
     width: 267px;
     height: 30px;
   background-color:#2686CC;
-
   color: white;
-  padding: 6px 100px;
+  text-align: center;
   margin: 8px 0;
   border: none;
   cursor: pointer;
@@ -112,6 +116,7 @@ input[type=text], input[type=password] {
      text-decoration: none;
      
 }
+
 .app{
     
     width: 342px;
@@ -123,7 +128,9 @@ input[type=text], input[type=password] {
     /* background-color: red; */
     font-size: 12px;
     margin-bottom: 195px;
-    
+}
+.app p{
+    margin-top: 30px;
 }
 
 .play{
