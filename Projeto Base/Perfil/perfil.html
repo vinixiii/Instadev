@@ -22,7 +22,10 @@
                     </div>
                     <div class="description">
                         <p><strong>Marcos Jeeves</strong></p>
-                        <a href="#">Sair</a>
+                        <div class="options">
+                            <a href="#">Editar perfil</a>
+                            <a href="#">Sair</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -36,10 +39,10 @@
             </div>
         </div>
     </div>
-    <section id="posts">
+    <article id="posts">
          <div class="posts-container">
-            <ul class="posts-content">
-                <li class="post">
+            <div class="posts-content">
+                <div class="post">
                     <img src="./img/thank-you 5.png" alt="">
                     <div class="post-info">
                         <div class="interaction">
@@ -51,7 +54,7 @@
                                     </div>
                             </div>
                             <div class="like-and-comment">
-                                <img src="./img/like.svg" alt="">
+                                <img id="1" src="./img/like.svg" alt="" onclick="curtir(1)">
                                 <img src="./img/comment.svg" alt="">
                             </div>
                             <p>1954 curtidas</p>
@@ -62,7 +65,7 @@
                                             <h3>fausto_silva</h3>
                                             <p>Esse cara é fera bixo</p>
                                         </div>
-                                        <img src="./img/like.svg" alt="">
+                                        <img id="2" src="./img/like.svg" alt="" onclick="curtir(2)">
                                     </div>
                                 </li>
                                 <li>
@@ -71,7 +74,7 @@
                                             <h3>yes_baby</h3>
                                             <p>thank you</p>
                                         </div>
-                                        <img src="./img/like.svg" alt="">
+                                        <img id="3" src="./img/like.svg" alt="" onclick="curtir(3)">
                                     </div>
                                 </li>
                                 <li>
@@ -80,7 +83,7 @@
                                             <h3>adriano_stark</h3>
                                             <p>Quando eu adormecer, vou sonhar com você. É sempre você.</p>
                                         </div>
-                                        <img src="./img/like.svg" alt="">
+                                        <img id="4" src="./img/like.svg" alt="" onclick="curtir(4)">
                                     </div>
                                 </li>
                                 <li>
@@ -89,16 +92,18 @@
                                             <h3>yes_baby</h3>
                                             <p>thank you</p>
                                         </div>
-                                        <img src="./img/like.svg" alt="">
+                                        <img id="5" src="./img/like.svg" alt="" onclick="curtir(5)">
                                     </div>
                                 </li>
                             </ul>
                             <p id="view-all-comments">Ver todos os 585 comentários</p>
                         </div>
                     </div>
-                </li>
-            </ul>
+                </div>
+            </div>
          </div>
-    </section>
+    </article>
+
+    <script src="./script.js" ></script>
 </body>
 </html>

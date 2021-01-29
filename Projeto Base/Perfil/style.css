@@ -57,7 +57,6 @@ body {
 
 .info-numbers p {
     margin: 2.0rem 0rem;
-    /* font-weight: 400; */
 }
 
 .description {
@@ -65,11 +64,24 @@ body {
     justify-content: space-between;
 }
 
-.description a {
+.options {
+    display: flex;
+}
+
+.options a:first-child {
+    margin-right: 3rem;
+}
+
+.options a {
     text-decoration: none;
     color: #2686CC;
     font-weight: 600;
     font-size: 1.5rem;
+}
+
+.options a:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 /*Informações do Usuário - Término*/
 
@@ -150,7 +162,6 @@ body {
 .interaction {
     width: 45rem;
     height: 35rem;
-    /* background-color: cadetblue; */
     font-size: 1.3rem;
 
     display: flex;
@@ -184,6 +195,7 @@ body {
     height: 2rem;
 
     margin: 3.5rem 0 0.5rem 0;
+    cursor: pointer;
 }
 
 .like-and-comment img:first-child {
@@ -203,6 +215,7 @@ body {
     height: 1.312rem;
     align-self: flex-start;
     justify-self: flex-end;
+    cursor: pointer;
 }
 
 .comment {
@@ -223,8 +236,16 @@ body {
 .comments-text h3{
     font-size: 1.3rem;
     margin-right: 1.5rem;
+    cursor: pointer;
 }
 
 #view-all-comments {
     margin: 3rem 0 0 0;
 }
+
+#view-all-comments:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/*JavaScript classes*/
