@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instadev | Perfil</title>
+    <title>Instadev | Perfil de Amigo</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -21,16 +21,13 @@
                          </button>
                     </div>
 
-                   
-
                     <div class="info-numbers">
                         <p>1 publicações</p>
                         <p>1.230 seguindo</p>
                         <p>5.398 seguidores</p>
                     </div>
                     <div class="description">
-                        <p><strong>Pamela Siegers</strong></p>
-                        <a href="#">Sair</a>
+                        <p><strong>Pamela Siegers</strong></p>                        
                     </div>
                 </div>
             </div>
@@ -44,10 +41,10 @@
             </div>
         </div>
     </div>
-    <section id="posts">
+    <article id="posts">
         <div class="posts-container">
-            <ul class="posts-content">
-                <li class="post">
+            <div class="posts-content">
+                <div class="post">
                     <img src="./images/modelo1fem.png" alt="">
                     <div class="post-info">
                         <div class="interaction">
@@ -59,10 +56,10 @@
                                 </div>
                             </div>
                             <div class="like-and-comment">
-                                <img src="./images/Vector.svg" alt="">
+                                <img id="1" src="./images/Vector.svg" alt="" onclick="curtir(1)">
                                 <img src="./images/Vector (1).svg" alt="">
                             </div>
-                            <p>1954 curtidas</p>
+                            <p>2021 curtidas</p>
                             <ul class="comments">
                                 <li>
                                     <div class="comment">
@@ -70,7 +67,7 @@
                                             <h3>fausto_silva</h3>
                                             <p>Olha essa fera meu</p>
                                         </div>
-                                        <img src="./images/Vector.svg" alt="">
+                                        <img id="2" src="./images/Vector.svg" alt="" onclick="curtir(2)">
                                     </div>
                                 </li>
                                 <li>
@@ -79,35 +76,35 @@
                                             <h3>SiegersDev</h3>
                                             <p>Look me</p>
                                         </div>
-                                        <img src="./images/Vector.svg" alt="">
+                                        <img id="3" src="./images/Vector.svg" alt="" onclick="curtir(3)">
                                     </div>
                                 </li>
                                 <li>
                                     <div class="comment">
                                         <div class="comments-text">
-                                            <h3>senai_info</h3>
-                                            <p>Nossa grande aluna!</p>
+                                            <h3>maria_aparecida</h3>
+                                            <p>Lindaaaa! Titia ama muito você!</p>
                                         </div>
-                                        <img src="./images/Vector.svg" alt="">
+                                        <img id="4" src="./images/Vector.svg" alt="" onclick="curtir(4)">
                                     </div>
                                 </li>
                                 <li>
                                     <div class="comment">
                                         <div class="comments-text">
-                                            <h3>yes_baby</h3>
+                                            <h3>SiegersDev</h3>
                                             <p>thank you</p>
                                         </div>
-                                        <img src="./images/Vector.svg" alt="">
+                                        <img id="5" src="./images/Vector.svg" alt="" onclick="curtir(5)">
                                     </div>
                                 </li>
                             </ul>
                             <p id="view-all-comments">Ver todos os 122 comentários</p>
                         </div>
                     </div>
-                </li>
-            </ul>
+                </div>
+            </div>
         </div>
-    </section>
+    </article>
     <script src="./script.js"></script>
 </body>
 
