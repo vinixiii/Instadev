@@ -122,7 +122,6 @@ input[type=date] {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background-color: red; */
     font-size: 12px;
     margin-bottom: 195px;
 }
