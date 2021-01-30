@@ -76,6 +76,14 @@
     list-style-type: none;
 }
 
+.informacao input {
+    border: 1px solid #ccc;
+}
+
+.informacao input:focus {
+    outline-color:  rgb(134, 134, 134);
+}
+
 .info-usuario{
     display: flex;
     align-items: center;
@@ -107,6 +115,10 @@
     font-weight: 600;
     text-decoration: none;
     color: #2686CC;
+}
+
+.info a:hover {
+    text-decoration: underline;
 }
 
 .nome form{
@@ -197,6 +209,11 @@
     text-decoration: none;
     padding: 0.5em 1em;
     border-radius: 2px;
+    border: none;
+}
+
+.botao:hover {
+    cursor: pointer;
 }
 
 .desativar{
@@ -204,4 +221,8 @@
     text-decoration: none;
     font-size: 12px;
     color:  #2686CC;
+}
+
+.desativar:hover {
+    text-decoration: underline;
 }

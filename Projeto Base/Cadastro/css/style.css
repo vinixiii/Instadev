@@ -19,7 +19,7 @@ body {
     margin-top: 149px;
 }
 
-.conect p:hover {
+.conect a:hover {
     text-decoration: underline;
 }
 
@@ -64,6 +64,15 @@ body {
 
 .input-content {
     width: 267px;
+}
+
+.input-content input {
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+
+.input-content input:focus {
+    outline-color:  rgb(134, 134, 134);
 }
 
 .input-content p {

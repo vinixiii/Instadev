@@ -56,6 +56,15 @@ body{
     width: 267px;
 }
 
+.input-content input {
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+
+.input-content input:focus {
+    outline-color:  rgb(134, 134, 134);
+}
+
 .input-content p{
     text-align: center;
     font-size: 12px;
@@ -70,7 +79,7 @@ body{
 }
 .linha-container p{
     position: relative;
-    margin: -5px 20px 0px 20px; 
+    margin: -3px 20px 0px 20px;
 }
 .linha{
     border: 1px solid ;
