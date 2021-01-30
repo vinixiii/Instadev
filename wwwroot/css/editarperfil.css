@@ -1,0 +1,228 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.principal{
+    width: 100%;
+    height: 38.125em;
+    padding-top: 24px;  
+}
+
+.edicao{
+    width: 58.4375em;
+    height: 38.125em;
+    margin: auto;
+    display: flex;
+    border: solid 1px #F1F1F1;
+}
+
+.titulo{
+    width: 14.5625em;
+    height: 38.125em;
+    border-right: solid 1px #F1F1F1;
+}
+.titulo h1{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.editar{
+    width: 14.5625em;
+    height: 3.37em;
+    padding-left: 1.8125em;
+    padding-top: 1em;
+    font-size: 0.9375em;
+    border-left: solid 3px;
+}
+
+.img{
+    display: flex;
+    width: 12.5em;
+    height: 38.125em;
+    padding-left: 8.0625em;
+    list-style-type: none;
+    justify-content: right;
+}
+
+.imagem{
+    width: 50px;
+    height: 50px;
+    
+    
+}
+
+.texto{
+    width: 12.5em;
+    height: 22.75em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.texto h2{
+    font-size: 14px;
+    font-weight: 600;
+}
+.informacao{
+    width: 580px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    list-style-type: none;
+}
+
+.informacao input {
+    border: 1px solid #ccc;
+}
+
+.informacao input:focus {
+    outline-color:  rgb(134, 134, 134);
+}
+
+.info-usuario{
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    margin-left: 153px;
+
+}
+
+.info-usuario img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.info{
+    width: 32.6875em;
+    height: 6.125em;
+    padding-top: 1.5625em;    
+}
+
+.info h2{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.info a{
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #2686CC;
+}
+
+.info a:hover {
+    text-decoration: underline;
+}
+
+.nome form{
+    display: flex;
+}
+
+.nome label{
+    margin-right: 20px;
+}
+
+.nome input{
+    width: 354px;
+    height: 25px;
+    border-style: solid 1px;
+    border-radius: 2px;
+    color: #DCDCDC;
+}
+
+.text-input{
+    width: 354px;
+    word-break: normal;
+    margin-bottom: 20px;
+}
+
+.text-input p{
+    margin: 10px 0;
+    color: #909090;
+    border-style: solid 1px;
+    font-size: 12px;
+}
+
+.usuario form{
+    display: flex;
+}
+
+.usuario label{
+    margin-right: 20px;
+}
+
+.usuario input{
+    width: 354px;
+    height: 1.875em;
+    border-style: solid 1px;
+    border-radius: 2px;
+    color: #DCDCDC;
+}
+
+.usuario p{
+    width: 354px;
+    color: #909090;
+    border-style: solid 1px;
+    font-size: 12px;
+}
+
+#txt-username{
+    margin-bottom: 25px;
+}
+
+.email{
+    display: flex;
+}
+
+.email label{
+    margin-right: 20px;
+}
+
+.email input{
+    width: 354px;
+    height: 1.875em;
+    border-style: solid 1px;
+    border-radius: 2px;
+    color: #DCDCDC;
+}
+
+.enviar{
+    width: 354px;
+    height: 8em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.botao{
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    background-color:  #2686CC;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 2px;
+    border: none;
+}
+
+.botao:hover {
+    cursor: pointer;
+}
+
+.desativar{
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 12px;
+    color:  #2686CC;
+}
+
+.desativar:hover {
+    text-decoration: underline;
+}
