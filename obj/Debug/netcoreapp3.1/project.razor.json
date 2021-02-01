@@ -14402,6 +14402,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\vinixiii\\Desktop\\Instadev-06\\Views\\Perfil\\Index.cshtml",
+      "TargetPath": "Views\\Perfil\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\vinixiii\\Desktop\\Instadev-06\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"

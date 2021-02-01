@@ -26,22 +26,23 @@ namespace Instadev_06.Controllers
 
             var logado = csv.Find(
                 x => 
-                x.Split(";")[3] == form["Email"] && 
-                x.Split(";")[4] == form["Senha"]
+                x.Split(";")[5] == form["Email"] && 
+                x.Split(";")[6] == form["Senha"]
             );
 
             if(logado != null)
             {
                 //Criamos uma sessão com os dados do usuário
-                HttpContext.Session.SetString("_Username", logado.Split(";")[1]);
                 HttpContext.Session.SetString("_UserId", logado.Split(";")[0]);
 
+                System.Console.WriteLine("Loguei meu irmão");
+                System.Console.WriteLine(HttpContext.Session.GetString("_UserId"));
+                
                 return LocalRedirect("~/");
             }
 
             Mensagem = "Tente novamente.";
 
-            System.Console.WriteLine("Loguei meu irmão");
 
             return LocalRedirect("~/Home");
         }
@@ -49,7 +50,6 @@ namespace Instadev_06.Controllers
         [Route("Deslogar")]
         public IActionResult Deslogar()
         {
-            HttpContext.Session.Remove("_Username");
             HttpContext.Session.Remove("_UserId");
 
             System.Console.WriteLine("Desloguei meu irmão");

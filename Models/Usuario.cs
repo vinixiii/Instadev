@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Microsoft.AspNetCore.Http;
 
 namespace Instadev_06.Models
 {
@@ -95,18 +96,34 @@ namespace Instadev_06.Models
         }
 
         //CRUD - Término
-
-        public void MostrarUsuario()
-        {
-            //Aqui será mostrado o perfil do usuário provavelmente
-        }
-        
+                
         public int GerarId()
         {
             List<string> linhas = ReadAllLinesCSV(PATH);
             int numero = linhas.Count() + 1;
 
             return numero;
+        }
+
+        public Usuario ObterUsuarioDaSessao(int userId)
+        {
+            List<string> usuarios = ReadAllLinesCSV(PATH);
+
+            // Traz os dados do usuário logado. Exemplo: 1;Nome;Foto;DataNascimento;Username;Email;Senha
+            var userLogado = usuarios.Find(x => x.Split(";")[0] == userId.ToString());
+
+            string[] atributo = userLogado.Split(";");
+
+            Usuario novoUsuario = new Usuario();
+            novoUsuario.IdUsuario = int.Parse(atributo[0]);
+            novoUsuario.Nome = atributo[1];
+            novoUsuario.Foto = atributo[2];
+            novoUsuario.DataNascimento = DateTime.Parse(atributo[3]);
+            novoUsuario.Username = atributo[4];
+            novoUsuario.Email = atributo[5];
+            novoUsuario.Senha = atributo[6];
+
+            return novoUsuario;
         }
     }
 }
