@@ -5,43 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Instadev_06</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Instadev_06</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+    <header class="top">
+        <div class="top-container">
+            <a href="#"><img src="img/img-header/Instadev.svg" alt="logo Instadev"></a>
+            <div class="search-container">
+                <div id="search">
+                    <img src="img/img-header/Vector.svg" alt="Procurar" />
+                    <input type="text" placeholder="Procurar" />
                 </div>
             </div>
-        </nav>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <a asp-area="" asp-controller="Cadastro" asp-action="Index" title="Página de cadastro">
+                            <img src="img/img-header/home 1.svg" alt="Início">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/img-header/plane 1.svg" alt="Direct"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/img-header/compass 1.svg" alt="Pesquisar"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/img-header/heart 1.svg" alt="Notificações"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/img-header/thank-you 1.svg" alt="Perfil"></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - Instadev_06 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+
+    <footer class="rodape">
+        <div class="rodape-container">
+            <div class="campo">
+                <nav>
+                    <ul>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Carreiras</a></li>
+                        <li><a href="#">Ajuda</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Privacidade</a></li>
+                        <li><a href="#">Termos</a></li>
+                        <li><a href="#">Contas mais relevantes</a></li>
+                        <li><a href="#">Hashtags</a></li>
+                        <li><a href="#">Localizações</a></li>                
+                    </ul>
+                </nav>
+            </div>
+            <div class="direitos">
+                <ul>
+                    <li><a href="#">Português (Brasil)</a></li>
+                    <li><a href="#">&copy; 2021 Instadev Grupo 6 - Todos os direitos reservados</a></li>
+                </ul>
+            </div>
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    @* <script src="~/lib/jquery/dist/jquery.min.js"></script> *@
+    @* <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> *@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
