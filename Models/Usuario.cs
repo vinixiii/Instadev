@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace Instadev_06.Models
 {
@@ -22,18 +23,21 @@ namespace Instadev_06.Models
         }
 
         public Usuario() {
+            //Cria a pasta e o arquivos caso ainda não esteja criado
             CreateFolderAndFile(PATH);
         }
 
-        //Prepara a linha do CSV
-        public string PrepareLine(Usuario u)
+        public string PrepareLineCSV(Usuario u)
         {
+            //Transformamos o objeto Usuario em uma linha de arquivo CSV
             return $"{u.IdUsuario};{u.Nome};{u.Foto};{u.DataNascimento};{u.Username};{u.Email};{u.Senha}";
         }
 
+        //CRUD - Início
+
         public void Create(Usuario u)
         {
-            string[] linhas = {PrepareLine(u)};
+            string[] linhas = {PrepareLineCSV(u)};
 
             File.AppendAllLines(PATH, linhas);
         }
@@ -65,12 +69,44 @@ namespace Instadev_06.Models
 
         public void Update(Usuario u)
         {
-            throw new NotImplementedException();
+            //Lemos todas as linhas do CSV
+            List<string> linhas = ReadAllLinesCSV(PATH);
+
+            //Removemos as linhas com o código comparado
+            linhas.RemoveAll(x => x.Split(";")[0] == u.IdUsuario.ToString());
+
+            //Adicionamos na lista a equipe alterada
+            linhas.Add(PrepareLineCSV(u));
+
+            //Reescrevemos o csv com a lista alterada
+            RewriteCSV(PATH, linhas);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            //Lemos todas as linhas do CSV
+            List<string> linhas = ReadAllLinesCSV(PATH);
+
+            //Removemos as linhas com o id comparado
+            linhas.RemoveAll(x => x.Split(";")[0] == id.ToString());
+
+            //Reescrevemos o csv com a lista alterada
+            RewriteCSV(PATH, linhas);
+        }
+
+        //CRUD - Término
+
+        public void MostrarUsuario()
+        {
+            //Aqui será mostrado o perfil do usuário provavelmente
+        }
+        
+        public int GerarId()
+        {
+            List<string> linhas = ReadAllLinesCSV(PATH);
+            int numero = linhas.Count() + 1;
+
+            return numero;
         }
     }
 }
