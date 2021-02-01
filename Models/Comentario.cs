@@ -15,7 +15,7 @@ namespace Instadev_06.Models
 
         public int IdPublicacao { get; set; }
 
-        public const string PATH = "Database/Publicacao.csv";
+        public const string PATH = "Database/Comentario.csv";
 
         public string _PATH
         {
