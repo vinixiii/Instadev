@@ -203,6 +203,24 @@ body {
     color: #DCDCDC;
 }
 
+.datadenascimento {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.datadenascimento label {
+    margin-top: 0.5rem;
+    margin-right: 2.0rem;
+}
+
+.datadenascimento input {
+    width: 35.4rem;
+    height: 3.0rem;
+    border-style: solid 0.1rem;
+    border-radius: 0.2rem;
+    color: #DCDCDC;
+}
+
 .enviar {
     width: 35.4rem;
     height: 12.8rem;
