@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using Instadev_06.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -31,6 +32,27 @@ namespace Instadev_06.Controllers
             Usuario novoUsuario = MostrarUsuario();
             novoUsuario.Nome = form["Nome"];
             novoUsuario.Foto = form["Foto"];
+            
+            if(form.Files.Count > 0){
+
+                var file = form.Files[0];
+                var folder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/perfil");
+
+                if(!Directory.Exists(folder))
+                {
+                    Directory.CreateDirectory(folder);
+                }
+
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/", folder, file.FileName);
+
+                using(var stream = new FileStream(path, FileMode.Create))
+                {
+                    file.CopyTo(stream);
+                }
+                
+                novoUsuario.Foto = file.FileName;           
+            }
+
             novoUsuario.DataNascimento = DateTime.Parse(form["DataNascimento"]);
             novoUsuario.Email = form["Email"];
             novoUsuario.Username = form["Username"];

@@ -32,7 +32,7 @@ namespace Instadev_06.Models
         public string PrepareLineCSV(Usuario u)
         {
             //Transformamos o objeto Usuario em uma linha de arquivo CSV
-            return $"{u.IdUsuario};{u.Nome};{u.Foto};{u.DataNascimento.ToString("MM-dd-yy")};{u.Username};{u.Email};{u.Senha}";
+            return $"{u.IdUsuario};{u.Nome};{u.Foto};{u.DataNascimento};{u.Username};{u.Email};{u.Senha}";
         }
 
         //CRUD - Início
