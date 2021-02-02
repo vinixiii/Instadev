@@ -1,3 +1,4 @@
+using System;
 using Instadev_06.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -25,9 +26,17 @@ namespace Instadev_06.Controllers
             return userLogado;
         }
         [Route("EditarPerfil-Alterar-dados")]
-        public IActionResult AlterarDados()
+        public IActionResult AlterarDados(IFormCollection form)
         {
             Usuario novoUsuario = MostrarUsuario();
+            novoUsuario.Nome = form["Nome"];
+            novoUsuario.Foto = form["Foto"];
+            novoUsuario.DataNascimento = DateTime.Parse(form["DataNascimento"]);
+            novoUsuario.Email = form["Email"];
+            novoUsuario.Username = form["Username"];
+            novoUsuario.Senha = form["Senha"];
+
+            usuarioModel.Update(novoUsuario);
             
             System.Console.WriteLine(novoUsuario);
             return LocalRedirect("~/EditarPerfil");
