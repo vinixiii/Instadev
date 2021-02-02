@@ -24,5 +24,13 @@ namespace Instadev_06.Controllers
 
             return userLogado;
         }
+        [Route("EditarPerfil-Alterar-dados")]
+        public IActionResult AlterarDados()
+        {
+            Usuario novoUsuario = MostrarUsuario();
+            
+            System.Console.WriteLine(novoUsuario);
+            return LocalRedirect("~/EditarPerfil");
+        }
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Instadev_06.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace Instadev_06.Controllers
 {
@@ -20,6 +21,8 @@ namespace Instadev_06.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.UserIdLogado = HttpContext.Session.GetString("_UserId");
+            ViewBag.UsernameLogado = HttpContext.Session.GetString("_Username");
             return View();
         }
 

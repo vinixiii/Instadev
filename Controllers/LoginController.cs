@@ -34,11 +34,7 @@ namespace Instadev_06.Controllers
             {
                 //Criamos uma sessão com os dados do usuário
                 HttpContext.Session.SetString("_UserId", logado.Split(";")[0]);
-
-                System.Console.WriteLine("Loguei meu irmão");
-                System.Console.WriteLine(HttpContext.Session.GetString("_UserId"));
-                
-                return LocalRedirect("~/");
+                return LocalRedirect("~/Feed");
             }
 
             Mensagem = "Tente novamente.";
@@ -50,10 +46,7 @@ namespace Instadev_06.Controllers
         [Route("Deslogar")]
         public IActionResult Deslogar()
         {
-            HttpContext.Session.Remove("_UserId");
-
-            System.Console.WriteLine("Desloguei meu irmão");
-            
+            HttpContext.Session.Remove("_UserId");            
             return LocalRedirect("~/");
         }
     }

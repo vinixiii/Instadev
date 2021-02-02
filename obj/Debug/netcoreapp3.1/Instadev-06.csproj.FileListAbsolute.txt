@@ -20,6 +20,8 @@ C:\Users\Lameck\Desktop\diabo\Instadev-06\obj\Debug\netcoreapp3.1\Instadev-06.Ta
 C:\Users\Lameck\Desktop\diabo\Instadev-06\obj\Debug\netcoreapp3.1\Instadev-06.TagHelpers.output.cache
 C:\Users\Lameck\Desktop\diabo\Instadev-06\obj\Debug\netcoreapp3.1\Instadev-06.RazorCoreGenerate.cache
 C:\Users\Lameck\Desktop\diabo\Instadev-06\obj\Debug\netcoreapp3.1\Razor\Views\Cadastro\Index.cshtml.g.cs
+C:\Users\Lameck\Desktop\diabo\Instadev-06\obj\Debug\netcoreapp3.1\Razor\Views\EditarPerfil\Index.cshtml.g.cs
+C:\Users\Lameck\Desktop\diabo\Instadev-06\obj\Debug\netcoreapp3.1\Razor\Views\Feed\Index.cshtml.g.cs
 C:\Users\Lameck\Desktop\diabo\Instadev-06\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\Lameck\Desktop\diabo\Instadev-06\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\Lameck\Desktop\diabo\Instadev-06\obj\Debug\netcoreapp3.1\Razor\Views\Login\Index.cshtml.g.cs
@@ -37,4 +39,3 @@ C:\Users\Lameck\Desktop\diabo\Instadev-06\obj\Debug\netcoreapp3.1\Instadev-06.dl
 C:\Users\Lameck\Desktop\diabo\Instadev-06\obj\Debug\netcoreapp3.1\Instadev-06.pdb
 C:\Users\Lameck\Desktop\diabo\Instadev-06\obj\Debug\netcoreapp3.1\Instadev-06.genruntimeconfig.cache
 C:\Users\Lameck\Desktop\diabo\Instadev-06\obj\Debug\netcoreapp3.1\Instadev-06.csproj.CopyComplete
-C:\Users\Lameck\Desktop\diabo\Instadev-06\obj\Debug\netcoreapp3.1\Razor\Views\EditarPerfil\Index.cshtml.g.cs

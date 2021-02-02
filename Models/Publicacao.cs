@@ -94,5 +94,13 @@ namespace Instadev_06.Models
             //Reescrevemos o csv com a lista alterada
             RewriteCSV(PATH, linhas);
         }
+
+        public int GerarIdPublicacao()
+        {
+            List<string> linhas = ReadAllLinesCSV(PATH);
+            int numero = linhas.Count() + 1;
+
+            return numero;
+        }
     }
 }

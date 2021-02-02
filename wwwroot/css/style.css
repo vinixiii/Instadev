@@ -495,8 +495,14 @@ body {
     margin-left: 0;
 }
 
-.menu li:last-child {
+.menu li:last-child{
     margin-right: 0;
+}
+
+.menu li img {
+    max-width: 3.2rem;
+    max-height: 3.2rem;
+    border-radius: 50%;
 }
 
 
@@ -966,6 +972,8 @@ span.psw {
 
 .imagem img {
     background-color: #FFFFFF;
+    width: 3.4rem;
+    height: 3.4rem;
 }
 
 .imagem ul {
@@ -995,6 +1003,11 @@ span.psw {
     max-width: 610px;
     margin-bottom: 14.08px;
     background-color: #FFFFFF;
+}
+
+.foto img {
+    width: 61rem;
+    height: 34.3rem;
 }
 
 .coracao {
