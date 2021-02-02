@@ -37,3 +37,4 @@ C:\Users\vinixiii\Desktop\Instadev-06\obj\Debug\netcoreapp3.1\Instadev-06.pdb
 C:\Users\vinixiii\Desktop\Instadev-06\obj\Debug\netcoreapp3.1\Instadev-06.genruntimeconfig.cache
 C:\Users\vinixiii\Desktop\Instadev-06\obj\Debug\netcoreapp3.1\Instadev-06.csproj.CopyComplete
 C:\Users\vinixiii\Desktop\Instadev-06\obj\Debug\netcoreapp3.1\Razor\Views\Perfil\Index.cshtml.g.cs
+C:\Users\vinixiii\Desktop\Instadev-06\obj\Debug\netcoreapp3.1\Razor\Views\Feed\Index.cshtml.g.cs
