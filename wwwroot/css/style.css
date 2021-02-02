@@ -464,8 +464,14 @@ body {
     margin-left: 0;
 }
 
-.menu li:last-child {
+.menu li:last-child{
     margin-right: 0;
+}
+
+.menu li img {
+    max-width: 3.2rem;
+    max-height: 3.2rem;
+    border-radius: 50%;
 }
 
 

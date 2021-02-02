@@ -28,8 +28,6 @@ namespace Instadev_06.Controllers
             usuarioModel.Create(novoUsuario);
 
             return LocalRedirect("~/Cadastro");
-        }
-
-       
+        }       
     }
  }
