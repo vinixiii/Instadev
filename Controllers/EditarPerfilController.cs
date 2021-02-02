@@ -63,5 +63,16 @@ namespace Instadev_06.Controllers
             System.Console.WriteLine(novoUsuario);
             return LocalRedirect("~/EditarPerfil");
         }
+        [Route("ExcluirPerfil")]
+        public IActionResult Excluir(int id)
+        {
+            var userId = HttpContext.Session.GetString("_UserId");
+            if (userId == id.ToString())
+            {
+                usuarioModel.Delete(id);
+
+            }
+            return LocalRedirect("~/Login");
+        }
     }
 }
