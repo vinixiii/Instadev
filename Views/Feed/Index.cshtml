@@ -1,5 +1,5 @@
 @{
-    ViewData["Title"] = "Feed | Instadev G6";
+    ViewData["Title"] = "Feed";
 }
 
 <div class="container-feed">
@@ -95,7 +95,8 @@
             <div class="post_gabigordo">
                 <div class="imagem">
                     <ul class="flex-center">
-                        <img src="~/img/perfil/padrao.png" alt="Foto do perfil do amigo Gabi Gordo">
+                        @* Imagem do usuario que fez o post *@
+                        <img src="~/img/perfil/@p.FotoUsuario" alt="Foto do perfil do amigo Gabi Gordo">
                         <div class="texto">
                             <p>asdfgsddfg</p>
                             <p>Flamengo, RJ</p>
@@ -103,6 +104,7 @@
                     </ul>
                 </div>
                 <div class="foto">
+                    @* Imagem do post *@
                     <img src="~/img/publicacoes/@p.Imagem" alt="Foto dos jogadores do Flamengo com o amigo gabigordo">
                 </div>
                 <div class="cont">

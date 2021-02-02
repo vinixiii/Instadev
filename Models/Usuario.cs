@@ -24,6 +24,8 @@ namespace Instadev_06.Models
             get{return PATH;}
         }
 
+        Random numRandom = new Random();
+        
         public Usuario() {
             //Cria a pasta e o arquivos caso ainda não esteja criado
             CreateFolderAndFile(PATH);
@@ -100,10 +102,11 @@ namespace Instadev_06.Models
                 
         public int GerarId()
         {
-            List<string> linhas = ReadAllLinesCSV(PATH);
-            int numero = linhas.Count() + 1;
+            // List<string> linhas = ReadAllLinesCSV(PATH);
 
-            return numero;
+            // int numero = linhas.Count() + 1;
+
+            return numRandom.Next();
         }
 
         public Usuario ObterUsuarioDaSessao(int userId)

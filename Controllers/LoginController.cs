@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Instadev_06.Controllers
 {
-    [Route("Login")]
     public class LoginController : Controller
     {
         [TempData]
@@ -16,6 +15,9 @@ namespace Instadev_06.Controllers
 
         public IActionResult Index()
         {
+            // var userId = HttpContext.Session.GetString("_UserId");
+            // ViewBag.UserLogado = usuarioModel.ObterUsuarioDaSessao(int.Parse(userId));
+
             return View();
         }
 
@@ -40,7 +42,7 @@ namespace Instadev_06.Controllers
             Mensagem = "Tente novamente.";
 
 
-            return LocalRedirect("~/Home");
+            return LocalRedirect("~/");
         }
 
         [Route("Deslogar")]

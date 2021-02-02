@@ -328,11 +328,6 @@ body {
     width: 26.7rem;
 }
 
-.input-content input {
-    border: 0.1rem solid #ccc;
-    border-radius: 0.2rem;
-}
-
 .input-content input:focus {
     outline-color: rgb(134, 134, 134);
 }
@@ -345,15 +340,18 @@ body {
     margin-top: 1rem;
 }
 
-.input-content input[type=text],
-.input-content input[type=password],
-.input-content input[type=date] {
+.input-content input {
     width: 26.7rem;
     height: 3.5rem;
     padding: 1.2rem 2rem;
     margin: 0.8rem 0;
     display: inline-block;
     border: 0.1px solid #ccc;
+    border-radius: 0.2rem;
+    color: black;
+}
+
+.input-content input::placeholder {
     color: #909090;
 }
 
@@ -678,7 +676,7 @@ body {
     text-decoration: underline;
 }
 
-.conect-login {
+/* .conect-login {
     width: 342px;
     height: 75px;
     display: flex;
@@ -692,7 +690,7 @@ body {
 
 .conect-login a:first-child {
     color: black;
-}
+} */
 
 .app {
     width: 342px;

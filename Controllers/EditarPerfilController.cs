@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Instadev_06.Models;
 using Microsoft.AspNetCore.Http;
@@ -10,11 +11,12 @@ namespace Instadev_06.Controllers
     public class EditarPerfilController : Controller
     {
         Usuario usuarioModel = new Usuario();
+        Publicacao publicacaoModel = new Publicacao();
 
         
         public IActionResult Index()
         {
-            ViewBag.userLogado = MostrarUsuario();
+            ViewBag.UserLogado = MostrarUsuario();
             return View();
         }
         
@@ -57,10 +59,33 @@ namespace Instadev_06.Controllers
             novoUsuario.Email = form["Email"];
             novoUsuario.Username = form["Username"];
             
-
             usuarioModel.Update(novoUsuario);
-            
-            System.Console.WriteLine(novoUsuario);
+
+            //Alterar form posts - início
+            List<string> posts = publicacaoModel.ReadAllLinesCSV(publicacaoModel._PATH);
+
+            var pub = posts.FindAll(x => x.Split(";")[3] == novoUsuario.IdUsuario.ToString());
+
+            System.Console.WriteLine(pub);
+
+            foreach (string item in pub)
+            {
+                var file = form.Files[0];
+
+                string[] linha = item.Split(";");
+
+                Publicacao publicacao = new Publicacao();
+                publicacao.IdPublicacao = int.Parse(linha[0]);
+                publicacao.Imagem = linha[1];
+                publicacao.Legenda = linha[2];
+                publicacao.IdUsuario = int.Parse(linha[3]);
+                publicacao.Likes = int.Parse(linha[4]);
+                publicacao.FotoUsuario = file.FileName;
+
+                publicacaoModel.Update(publicacao);
+            }
+            //Alterar form posts - início
+
             return LocalRedirect("~/EditarPerfil");
         }
         [Route("ExcluirPerfil")]
