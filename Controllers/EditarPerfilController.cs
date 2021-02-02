@@ -34,7 +34,7 @@ namespace Instadev_06.Controllers
             novoUsuario.DataNascimento = DateTime.Parse(form["DataNascimento"]);
             novoUsuario.Email = form["Email"];
             novoUsuario.Username = form["Username"];
-            novoUsuario.Senha = form["Senha"];
+            
 
             usuarioModel.Update(novoUsuario);
             
