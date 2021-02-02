@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using Microsoft.AspNetCore.Http;
@@ -31,7 +32,7 @@ namespace Instadev_06.Models
         public string PrepareLineCSV(Usuario u)
         {
             //Transformamos o objeto Usuario em uma linha de arquivo CSV
-            return $"{u.IdUsuario};{u.Nome};{u.Foto};{u.DataNascimento};{u.Username};{u.Email};{u.Senha}";
+            return $"{u.IdUsuario};{u.Nome};{u.Foto};{u.DataNascimento.ToString("MM-dd-yy")};{u.Username};{u.Email};{u.Senha}";
         }
 
         //CRUD - Início
@@ -113,11 +114,13 @@ namespace Instadev_06.Models
             var userLogado = usuarios.Find(x => x.Split(";")[0] == userId.ToString());
 
             string[] atributo = userLogado.Split(";");
+            // var formato = new CultureInfo("en-US");
 
             Usuario novoUsuario = new Usuario();
             novoUsuario.IdUsuario = int.Parse(atributo[0]);
             novoUsuario.Nome = atributo[1];
             novoUsuario.Foto = atributo[2];
+            // novoUsuario.DataNascimento = DateTime.ParseExact(atributo[3],"g",formato);
             novoUsuario.DataNascimento = DateTime.Parse(atributo[3]);
             novoUsuario.Username = atributo[4];
             novoUsuario.Email = atributo[5];
