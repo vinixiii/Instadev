@@ -86,6 +86,8 @@ body {
 
 .informacao input {
     border: 0.1rem solid #ccc;
+    padding-left: 1rem;
+    color: black;
 }
 
 .informacao input:focus {
@@ -128,7 +130,20 @@ body {
     text-decoration: underline;
 }
 
-.nome form {
+.alterar-editar{
+    color: #2686CC;
+}
+
+.alterar-editar input{
+    display: none;
+}
+
+.alterar-editar :hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.nome {
     display: flex;
 }
 
@@ -142,7 +157,6 @@ body {
     height: 3rem;
     border-style: solid 0.1rem;
     border-radius: 0.2rem;
-    color: #DCDCDC;
 }
 
 .text-input {
@@ -158,7 +172,7 @@ body {
     font-size: 1.2rem;
 }
 
-.usuario form {
+.usuario {
     display: flex;
 }
 
@@ -172,7 +186,6 @@ body {
     height: 3.0rem;
     border-style: solid 0.1rem;
     border-radius: 0.2rem;
-    color: #DCDCDC;
 }
 
 .usuario p {
@@ -200,7 +213,23 @@ body {
     height: 3.0rem;
     border-style: solid 0.1rem;
     border-radius: 0.2rem;
-    color: #DCDCDC;
+}
+
+.datadenascimento {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.datadenascimento label {
+    margin-top: 0.5rem;
+    margin-right: 2.0rem;
+}
+
+.datadenascimento input {
+    width: 35.4rem;
+    height: 3.0rem;
+    border-style: solid 0.1rem;
+    border-radius: 0.2rem;
 }
 
 .enviar {
@@ -299,11 +328,6 @@ body {
     width: 26.7rem;
 }
 
-.input-content input {
-    border: 0.1rem solid #ccc;
-    border-radius: 0.2rem;
-}
-
 .input-content input:focus {
     outline-color: rgb(134, 134, 134);
 }
@@ -316,15 +340,18 @@ body {
     margin-top: 1rem;
 }
 
-.input-content input[type=text],
-.input-content input[type=password],
-.input-content input[type=date] {
+.input-content input {
     width: 26.7rem;
     height: 3.5rem;
     padding: 1.2rem 2rem;
     margin: 0.8rem 0;
     display: inline-block;
     border: 0.1px solid #ccc;
+    border-radius: 0.2rem;
+    color: black;
+}
+
+.input-content input::placeholder {
     color: #909090;
 }
 
@@ -464,8 +491,14 @@ body {
     margin-left: 0;
 }
 
-.menu li:last-child {
+.menu li:last-child{
     margin-right: 0;
+}
+
+.menu li img {
+    max-width: 3.2rem;
+    max-height: 3.2rem;
+    border-radius: 50%;
 }
 
 
@@ -643,7 +676,7 @@ body {
     text-decoration: underline;
 }
 
-.conect-login {
+/* .conect-login {
     width: 342px;
     height: 75px;
     display: flex;
@@ -657,7 +690,7 @@ body {
 
 .conect-login a:first-child {
     color: black;
-}
+} */
 
 .app {
     width: 342px;
@@ -747,12 +780,18 @@ span.psw {
 .content ul {
     width: 610px;
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     background-color: #FFFFFF;
+    overflow-x: auto;
+}
+
+.content ul::-webkit-scrollbar {
+    width: 0;
 }
 
 .content li {
     text-align: center;
+    padding-top: 2rem;
 }
 
 .flex-center-bt {
@@ -773,12 +812,24 @@ span.psw {
 }
 
 .friends li {
-    background-color: #FFFFFF;
+    /* background-color: #FFFFFF; */
+    margin: 0 2rem;
 }
 
 .friends li img {
     background-color: #FFFFFF;
+    width: 6.2rem;
+    height: 6.2rem;
+    border-radius: 50%;
 }
+
+/* .friends li img:first-child {
+    margin-left: 0;
+}
+
+.friends li img:last-child {
+    margin-right: 0;
+} */
 
 .friends p {
     background-color: #FFFFFF;
@@ -790,6 +841,12 @@ span.psw {
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
+}
+
+.alinhado img {
+    width: 6.2rem;
+    height: 6.2rem;
+    border-radius: 50%;
 }
 
 .alinhado p {
@@ -824,6 +881,12 @@ span.psw {
 .postar-content {
     margin: 0 25px;
     background: #FFFFFF;
+}
+
+.postar-content img {
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 50%;
 }
 
 .flex-center {
@@ -919,7 +982,7 @@ span.psw {
     color: white;
 }
 
-.post_gabigordo {
+.post-feed {
     width: 610px;
     height: 610px;
     background-color: #FFFFFF;
@@ -935,6 +998,9 @@ span.psw {
 
 .imagem img {
     background-color: #FFFFFF;
+    width: 3.4rem;
+    height: 3.4rem;
+    border-radius: 50%;
 }
 
 .imagem ul {
@@ -945,13 +1011,13 @@ span.psw {
     background-color: #FFFFFF;
 }
 
-.post_gabigordo p:first-child {
+.post-feed p:first-child {
     font-weight: 600;
     font-style: normal;
     background-color: #FFFFFF;
 }
 
-.post_gabigordo p {
+.post-feed p {
     margin-left: 13px;
     font-size: 13px;
     font-weight: 400;
@@ -964,6 +1030,11 @@ span.psw {
     max-width: 610px;
     margin-bottom: 14.08px;
     background-color: #FFFFFF;
+}
+
+.foto img {
+    width: 61rem;
+    height: 34.3rem;
 }
 
 .coracao {
@@ -1372,3 +1443,7 @@ span.psw {
 
 
 /*------------------Fim amigo-------------------*/
+
+.invisivel {
+    display: none;
+}

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vinixiii\\Desktop\\sfghsdfghsfghgf\\Testes\\Instadev-06\\Instadev-06.csproj": {}
+    "C:\\Users\\vinixiii\\Desktop\\sfghsdfghsfghgf\\Instadev-06\\Instadev-06.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vinixiii\\Desktop\\sfghsdfghsfghgf\\Testes\\Instadev-06\\Instadev-06.csproj": {
+    "C:\\Users\\vinixiii\\Desktop\\sfghsdfghsfghgf\\Instadev-06\\Instadev-06.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vinixiii\\Desktop\\sfghsdfghsfghgf\\Testes\\Instadev-06\\Instadev-06.csproj",
+        "projectUniqueName": "C:\\Users\\vinixiii\\Desktop\\sfghsdfghsfghgf\\Instadev-06\\Instadev-06.csproj",
         "projectName": "Instadev-06",
-        "projectPath": "C:\\Users\\vinixiii\\Desktop\\sfghsdfghsfghgf\\Testes\\Instadev-06\\Instadev-06.csproj",
+        "projectPath": "C:\\Users\\vinixiii\\Desktop\\sfghsdfghsfghgf\\Instadev-06\\Instadev-06.csproj",
         "packagesPath": "C:\\Users\\vinixiii\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vinixiii\\Desktop\\sfghsdfghsfghgf\\Testes\\Instadev-06\\obj\\",
+        "outputPath": "C:\\Users\\vinixiii\\Desktop\\sfghsdfghsfghgf\\Instadev-06\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vinixiii\\AppData\\Roaming\\NuGet\\NuGet.Config"

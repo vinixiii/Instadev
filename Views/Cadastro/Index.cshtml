@@ -16,27 +16,26 @@
         </div>
 
         <div class="container-cadastro">
-            <div class="input-content">
-                <label for="uname"><b></b></label>
-                <input type="text" placeholder="E-mail" name="uname" required>
+            <form class="input-content" method="POST" action='@Url.Action("Cadastrar")' enctype="multipart/form-data">
+                <input type="text" placeholder="E-mail" name="Email" required>
 
-                <input type="text" placeholder="Nome completo" name="psw" required>
+                <input type="text" placeholder="Nome completo" name="Nome" required>
 
-                <input type="text" placeholder="Data de nascimento" onfocus="(this.type='date')" required>
+                <input type="text" placeholder="Data de nascimento" name="DataNascimento" onfocus="(this.type='date')" required>
 
-                <input type="text" placeholder="Nome de usuário" name="psw" required>
+                <input type="text" placeholder="Nome de usuário" name="Username" required>
 
-                <input type="password" placeholder="Senha" name="psw" required>
+                <input type="password" placeholder="Senha" name="Senha" required>
 
                 <button class="botao-cadastro" type="submit">Cadastre-se</button>
                 <p>Ao se cadastrar, você concorda com nossos Termos, Política de Dados e Política de Cookies. </p>
-            </div>
+            </form>
         </div>
 
     </div>
     <div class="conect">
         <p>
-            Tem uma conta? <a href=""> Conecte-se</a>
+            Tem uma conta? <a asp-area="" asp-controller="Login" asp-action="Index" title="Conecte-se"> Conecte-se</a>
         </p>
 
     </div>

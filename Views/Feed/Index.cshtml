@@ -1,0 +1,127 @@
+@{
+    ViewData["Title"] = "Feed";
+}
+
+<div class="container-feed">
+    <div class="small-space"></div>
+    <section class="friend-list flex-center-bt">
+        <div class="content flex-center-bt">
+            <ul>
+                @foreach (Usuario u in ViewBag.Usuarios)
+                {
+                    <div class="friends" asp-area="" asp-controller="Amigo" asp-action="Index" title="">
+                        <li> 
+                            <img src="~/img/perfil/@u.Foto" alt="Foto do perfil do amigo Vin Diesel">
+                            <p>@u.Username</p>
+                        </li>
+                    </div>
+                }
+            </ul>
+        </div>
+        <div class="alinhado">
+            <ul class="flex-center-bt">
+                @* Imagem do usuário logado *@
+                <li><img src="~/img/perfil/@ViewBag.UserLogado.Foto" alt="Sua foto de perfil"></li>
+                <div class="username_feed">
+                    <p>@ViewBag.UserLogado.Username</p>
+                    <p>@ViewBag.UserLogado.Nome</p>
+                </div>
+
+            </ul>
+        </div>
+    </section>
+    <section class="post">
+        <div class="container">
+            <div class="postar-content">
+
+                <ul class="flex-center">
+                    <div class="img-text">
+                        @* Imagem do usuário logado *@
+                        <li class="sombrinha"><img src="~/img/perfil/@ViewBag.UserLogado.Foto" alt="Imagem de perfil"></li>
+                        <li>
+                            <h3>Postar</h3>
+                        </li>
+                    </div>
+                </ul>
+                <div class="Adicionar-conteudo">
+                    <form method="POST" action='@Url.Action("CreatePost")' enctype="multipart/form-data">
+                        <div class="busca">
+                            <ul class="flex-center-bt">
+                                <div class="digite">
+                                    <li><input type="text" name="Legenda" placeholder="Digite a descrição da imagem..." required/></li>
+                                </div>
+                                <div class="escolher">
+                                    <label for='selecao-arquivo'>Escolha a imagem</label>
+                                    <input type="file" id="selecao-arquivo" name="Imagem" required/>
+                                </div>
+                                <div class="postar">
+                                    <li><button type="submit">Postar</button></li>
+                                </div>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="Postagem1">
+        @foreach (Publicacao p in ViewBag.Posts)
+        {
+            <div class="post-feed">
+                <div class="imagem">
+                    <ul class="flex-center">
+                        @* Imagem do usuario que fez o post *@
+                        <img src="~/img/perfil/@p.FotoUsuario" alt="Foto do perfil do amigo Gabi Gordo">
+                        <div class="texto">
+                            <p class="nome-publicacao">@ViewBag.UsernamePost</p>
+                            <p>Flamengo, RJ</p>
+                        </div>
+                    </ul>
+                </div>
+                <div class="foto">
+                    @* Imagem do post *@
+                    <img src="~/img/publicacoes/@p.Imagem" alt="Foto dos jogadores do Flamengo com o amigo gabigordo">
+                </div>
+                <div class="cont">
+                    <form>
+                        <div class="coments">
+                            <ul class="flex-center">
+                                <div class="coracao">
+                                    <label><img src="./img/img-feed/Vectors2.svg" alt="Coração de like"  id="1" onclick="mudarImagem(1);"></label>
+                                </div>
+                                <div class="balao">
+                                    <img src="./img/img-feed/Vectorbalao.svg" alt="">
+                                </div>
+                                <div class="comentar">
+                                    <input type="text"  placeholder="Comentar..." required: required />
+                                </div>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+                <div class="text">
+                    <h5 class="curtidas">2077 curtidas</h5>
+                </div>
+                <div class="coments">
+                    <ul class="flex-center">
+                        <h4>gabigordo</h4>
+                        <p>
+                            <span class="cerquilha">#flamengo</span> Amo vocês mil milhões S2</p>
+                    </ul>
+                </div>
+                <div class="coments">
+                    <ul class="flex-center">
+                        <h4>yes_baby</h4>
+                        <p>thank you </p>
+                    </ul>
+                </div>
+                <div class="coments">
+                    <ul class="flex-center">
+                        <h4>king_pele</h4>
+                        <p>Esses são bons de bola, entende?</p>
+                    </ul>
+                </div>
+            </div>
+        }
+    </section>        
+</div>

@@ -13,6 +13,7 @@ namespace Instadev_06.Controllers
         {
             return View();
         }
+        
         [Route("Cadastro-Usuario")]
         public IActionResult Cadastrar(IFormCollection form)
         {
@@ -27,9 +28,7 @@ namespace Instadev_06.Controllers
 
             usuarioModel.Create(novoUsuario);
 
-            return LocalRedirect("~/Cadastro");
-        }
-
-       
+            return LocalRedirect("~/Login");
+        }       
     }
  }

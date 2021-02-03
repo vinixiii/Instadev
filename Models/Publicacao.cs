@@ -18,11 +18,15 @@ namespace Instadev_06.Models
 
         public int Likes { get; set; }
 
+        public string FotoUsuario { get; set; }
+        
         public const string PATH = "Database/Publicacao.csv";
 
         public string _PATH {
             get{return PATH;}
         }
+
+        Random numRandom = new Random();
         
         public Publicacao(){
             //Cria a pasta e o arquivos caso ainda não esteja criado
@@ -32,7 +36,7 @@ namespace Instadev_06.Models
         public string PrepareLineCSV(Publicacao p)
         {
             //Transforma o objeto Publicação em uma linha de arquivo CSV
-            return $"{p.IdPublicacao};{p.Imagem};{p.Legenda};{p.IdUsuario};{p.Likes}";
+            return $"{p.IdPublicacao};{p.Imagem};{p.Legenda};{p.IdUsuario};{p.Likes};{p.FotoUsuario}";
         }
 
         // Implementado a Interface com o CRUD
@@ -72,6 +76,7 @@ namespace Instadev_06.Models
                 novaPublicacao.Legenda = linha[2];
                 novaPublicacao.IdUsuario = int.Parse(linha[3]);
                 novaPublicacao.Likes = int.Parse(linha[4]);
+                novaPublicacao.FotoUsuario = linha[5];
                 
                 publicacoes.Add(novaPublicacao);
             }
@@ -93,6 +98,11 @@ namespace Instadev_06.Models
 
             //Reescrevemos o csv com a lista alterada
             RewriteCSV(PATH, linhas);
+        }
+
+        public int GerarIdPublicacao()
+        {
+            return numRandom.Next();
         }
     }
 }
