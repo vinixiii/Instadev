@@ -47,10 +47,11 @@
         </div>
         <div class="alinhado">
             <ul class="flex-center-bt">
-                <li><img src="./img/img-feed/thank-you 2.png" alt="Sua foto de perfil"></li>
+                @* Imagem do usuário logado *@
+                <li><img src="~/img/perfil/@ViewBag.UserLogado.Foto" alt="Sua foto de perfil"></li>
                 <div class="username_feed">
-                    <p> yes_baby</p>
-                    <p>Marcos Jeeves</p>
+                    <p>@ViewBag.UserLogado.Username</p>
+                    <p>@ViewBag.UserLogado.Nome</p>
                 </div>
 
             </ul>
@@ -62,7 +63,8 @@
 
                 <ul class="flex-center">
                     <div class="img-text">
-                        <li class="sombrinha"><img src="./img/img-feed/thank-you 3.svg" alt="Imagem de perfil"></li>
+                        @* Imagem do usuário logado *@
+                        <li class="sombrinha"><img src="~/img/perfil/@ViewBag.UserLogado.Foto" alt="Imagem de perfil"></li>
                         <li>
                             <h3>Postar</h3>
                         </li>
@@ -98,7 +100,7 @@
                         @* Imagem do usuario que fez o post *@
                         <img src="~/img/perfil/@p.FotoUsuario" alt="Foto do perfil do amigo Gabi Gordo">
                         <div class="texto">
-                            <p>asdfgsddfg</p>
+                            <p>@ViewBag.UsernamePost</p>
                             <p>Flamengo, RJ</p>
                         </div>
                     </ul>

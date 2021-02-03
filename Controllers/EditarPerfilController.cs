@@ -61,12 +61,12 @@ namespace Instadev_06.Controllers
             
             usuarioModel.Update(novoUsuario);
 
+            ViewBag.UsuarioAtualizado = novoUsuario;
+
             //Alterar form posts - início
             List<string> posts = publicacaoModel.ReadAllLinesCSV(publicacaoModel._PATH);
 
             var pub = posts.FindAll(x => x.Split(";")[3] == novoUsuario.IdUsuario.ToString());
-
-            System.Console.WriteLine(pub);
 
             foreach (string item in pub)
             {
@@ -88,6 +88,7 @@ namespace Instadev_06.Controllers
 
             return LocalRedirect("~/EditarPerfil");
         }
+
         [Route("ExcluirPerfil")]
         public IActionResult Excluir(int id)
         {

@@ -25,6 +25,8 @@ namespace Instadev_06.Models
         public string _PATH {
             get{return PATH;}
         }
+
+        Random numRandom = new Random();
         
         public Publicacao(){
             //Cria a pasta e o arquivos caso ainda não esteja criado
@@ -100,10 +102,7 @@ namespace Instadev_06.Models
 
         public int GerarIdPublicacao()
         {
-            List<string> linhas = ReadAllLinesCSV(PATH);
-            int numero = linhas.Count() + 1;
-
-            return numero;
+            return numRandom.Next();
         }
     }
 }
