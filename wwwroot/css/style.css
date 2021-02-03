@@ -982,7 +982,7 @@ span.psw {
     color: white;
 }
 
-.post_gabigordo {
+.post-feed {
     width: 610px;
     height: 610px;
     background-color: #FFFFFF;
@@ -1011,13 +1011,13 @@ span.psw {
     background-color: #FFFFFF;
 }
 
-.post_gabigordo p:first-child {
+.post-feed p:first-child {
     font-weight: 600;
     font-style: normal;
     background-color: #FFFFFF;
 }
 
-.post_gabigordo p {
+.post-feed p {
     margin-left: 13px;
     font-size: 13px;
     font-weight: 400;
@@ -1443,3 +1443,7 @@ span.psw {
 
 
 /*------------------Fim amigo-------------------*/
+
+.invisivel {
+    display: none;
+}

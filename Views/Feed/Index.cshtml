@@ -48,7 +48,7 @@
                         <div class="busca">
                             <ul class="flex-center-bt">
                                 <div class="digite">
-                                    <li><input type="text" id="txtBusca" name="Legenda" placeholder="Digite a descrição da imagem..." required/></li>
+                                    <li><input type="text" name="Legenda" placeholder="Digite a descrição da imagem..." required/></li>
                                 </div>
                                 <div class="escolher">
                                     <label for='selecao-arquivo'>Escolha a imagem</label>
@@ -64,16 +64,16 @@
             </div>
         </div>
     </section>
-    @foreach (Publicacao p in ViewBag.Posts)
-    {
-        <section class="Postagem1">
-            <div class="post_gabigordo">
+    <section class="Postagem1">
+        @foreach (Publicacao p in ViewBag.Posts)
+        {
+            <div class="post-feed">
                 <div class="imagem">
                     <ul class="flex-center">
                         @* Imagem do usuario que fez o post *@
                         <img src="~/img/perfil/@p.FotoUsuario" alt="Foto do perfil do amigo Gabi Gordo">
                         <div class="texto">
-                            <p>@ViewBag.UsernamePost</p>
+                            <p class="nome-publicacao">@ViewBag.UsernamePost</p>
                             <p>Flamengo, RJ</p>
                         </div>
                     </ul>
@@ -93,7 +93,7 @@
                                     <img src="./img/img-feed/Vectorbalao.svg" alt="">
                                 </div>
                                 <div class="comentar">
-                                    <input type="text" id="txtBusca" placeholder="Comentar..." required: required />
+                                    <input type="text"  placeholder="Comentar..." required: required />
                                 </div>
                             </ul>
                         </div>
@@ -122,6 +122,6 @@
                     </ul>
                 </div>
             </div>
-        </section>        
-    }
+        }
+    </section>        
 </div>
