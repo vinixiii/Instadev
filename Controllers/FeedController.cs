@@ -14,12 +14,17 @@ namespace Instadev_06.Controllers
 
         public IActionResult Index()
         {
+            //Traz todods os posts
             ViewBag.Posts = publicacaoModel.ReadAll();
+
+            //Traz todos os usuários
+            ViewBag.Usuarios = usuarioModel.ReadAll();
+
             ViewBag.UsernamePost = ObterUsername();
             System.Console.WriteLine(ViewBag.UsernamePost);
             
             var userId = HttpContext.Session.GetString("_UserId");
-            ViewBag.UserLogado = usuarioModel.ObterUsuarioDaSessao(int.Parse(userId));   
+            ViewBag.UserLogado = usuarioModel.ObterUsuarioDaSessao(int.Parse(userId));
             
             return View();
         }
@@ -67,8 +72,6 @@ namespace Instadev_06.Controllers
             //Obter username do usuário logado - início
             string username = ObterUsername();
             ViewBag.Usuario = username;
-
-
             //Obter username do usuário logado - final
 
             publicacaoModel.Create(novoPost);

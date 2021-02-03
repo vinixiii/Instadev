@@ -58,7 +58,7 @@
         @RenderBody()
     </main>
 
-    @if(ViewBag.UsuarioLogado != null)
+    @if((ViewData["Title"].ToString() != "Login") && (ViewData["Title"].ToString() != "Cadastro"))
     {
         <footer class="rodape">
             <div class="rodape-container">

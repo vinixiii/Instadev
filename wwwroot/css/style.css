@@ -780,12 +780,18 @@ span.psw {
 .content ul {
     width: 610px;
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     background-color: #FFFFFF;
+    overflow-x: auto;
+}
+
+.content ul::-webkit-scrollbar {
+    width: 0;
 }
 
 .content li {
     text-align: center;
+    padding-top: 2rem;
 }
 
 .flex-center-bt {
@@ -806,12 +812,24 @@ span.psw {
 }
 
 .friends li {
-    background-color: #FFFFFF;
+    /* background-color: #FFFFFF; */
+    margin: 0 2rem;
 }
 
 .friends li img {
     background-color: #FFFFFF;
+    width: 6.2rem;
+    height: 6.2rem;
+    border-radius: 50%;
 }
+
+/* .friends li img:first-child {
+    margin-left: 0;
+}
+
+.friends li img:last-child {
+    margin-right: 0;
+} */
 
 .friends p {
     background-color: #FFFFFF;

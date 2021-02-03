@@ -6,43 +6,52 @@
     <div class="small-space"></div>
     <section class="friend-list flex-center-bt">
         <div class="content flex-center-bt">
-            <ul class="flex-center-bt">
-                <div class="friends">
-                    <li> <img src="./img/img-feed/vin-diesel 1.png" alt="Foto do perfil do amigo Vin Diesel">
-                        <p>vin_diesel </p>
-                    </li>
-                </div>
+            <ul>
+                @foreach (Usuario u in ViewBag.Usuarios)
+                {
+                    <div class="friends">
+                        <li> 
+                            <img src="~/img/perfil/@u.Foto" alt="Foto do perfil do amigo Vin Diesel">
+                            <p>@u.Username</p>
+                        </li>
+                    </div>
+                }
 
-                <div class="friends">
-                    <li><img src="./img/img-feed/gabigordo 1.png" alt="Foto do perfil do amigo Gabi gordo">
-                        <p>gabigordo</p>
-                    </li>
-                </div>
-                <div class="friends">
-                    <li><img src="./img/img-feed/will-baiano 1.png" alt="Foto do perfil do amigo Will baiano">
-                        <p>will_baiano</p>
-                    </li>
-                </div>
-                <div class="friends">
-                    <li><img src="./img/img-feed/tony_stark 1.png" alt="Foto do perfil do amigo Adriano Stark">
-                        <p>adriano_stark</p>
-                    </li>
-                </div>
-                <div class="friends">
-                    <li><img src="./img/img-feed/pele 1.png" alt="Foto do perfil do amigo King Pelé ">
-                        <p>king_pele</p>
-                    </li>
-                </div>
-                <div class="friends">
-                    <li><img src="./img/img-feed/samuel-rosa-bebê 1.png" alt="Foto do perfil do amigo Samuel Rosa ">
-                        <p>samuel_rosa</p>
-                    </li>
-                </div>
-                <div class="friends">
-                    <li><img src="./img/img-feed/chaves_metal 1.png" alt="Foto do perfil do amigo Chavel Metal ">
-                        <p>chaves_metal</p>
-                    </li>
-                </div>
+                    @* <div class="friends">
+                        <li>
+                            <img src="./img/img-feed/gabigordo 1.png" alt="Foto do perfil do amigo Gabi gordo">
+                            <p>gabigordo</p>
+                        </li>
+                    </div>
+                    <div class="friends">
+                        <li>
+                            <img src="./img/img-feed/will-baiano 1.png" alt="Foto do perfil do amigo Will baiano">
+                            <p>will_baiano</p>
+                        </li>
+                    </div>
+                    <div class="friends">
+                        <li>
+                            <img src="./img/img-feed/tony_stark 1.png" alt="Foto do perfil do amigo Adriano Stark">
+                            <p>adriano_stark</p>
+                        </li>
+                    </div>
+                    <div class="friends">
+                        <li>
+                            <img src="./img/img-feed/pele 1.png" alt="Foto do perfil do amigo King Pelé ">
+                            <p>king_pele</p>
+                        </li>
+                    </div>
+                    <div class="friends">
+                        <li>
+                            <img src="./img/img-feed/samuel-rosa-bebê 1.png" alt="Foto do perfil do amigo Samuel Rosa ">
+                            <p>samuel_rosa</p>
+                        </li>
+                    </div>
+                    <div class="friends">
+                        <li><img src="./img/img-feed/chaves_metal 1.png" alt="Foto do perfil do amigo Chavel Metal ">
+                            <p>chaves_metal</p>
+                        </li>
+                    </div> *@
             </ul>
         </div>
         <div class="alinhado">
