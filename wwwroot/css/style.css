@@ -1037,6 +1037,10 @@ span.psw {
     height: 34.3rem;
 }
 
+#legenda{
+    margin: 0 0 2rem 0;
+}
+
 .coracao {
     background-color: #FFFFFF;
 }
