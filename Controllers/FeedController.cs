@@ -19,9 +19,6 @@ namespace Instadev_06.Controllers
 
             //Traz todos os usuários
             ViewBag.Usuarios = usuarioModel.ReadAll();
-
-            ViewBag.UsernamePost = ObterUsername();
-            System.Console.WriteLine(ViewBag.UsernamePost);
             
             var userId = HttpContext.Session.GetString("_UserId");
             ViewBag.UserLogado = usuarioModel.ObterUsuarioDaSessao(int.Parse(userId));
@@ -60,38 +57,19 @@ namespace Instadev_06.Controllers
             novoPost.IdUsuario = int.Parse(userId);
             novoPost.Likes = 0;
 
-            //Obter foto do usuário - início
+            //Obter foto e username do usuário - início
             List<string> usuarios = usuarioModel.ReadAllLinesCSV(usuarioModel._PATH);
             
             var user = usuarios.Find(x => x.Split(";")[0] == userId.ToString());
-            string[] foto = user.Split(";");
+            string[] atributo = user.Split(";");
 
-            novoPost.FotoUsuario = foto[2];
-            //Obter foto do usuário - final
-
-            //Obter username do usuário logado - início
-            string username = ObterUsername();
-            ViewBag.Usuario = username;
-            //Obter username do usuário logado - final
+            novoPost.FotoUsuario = atributo[2];
+            novoPost.Username = atributo[4];
+            //Obter foto e username - final
 
             publicacaoModel.Create(novoPost);
 
             return LocalRedirect("~/Feed");
-        }
-
-        [Route("Obter-Username-Post")]
-        public string ObterUsername(){
-            var userId = HttpContext.Session.GetString("_UserId");
-
-            List<string> usuarios = usuarioModel.ReadAllLinesCSV(usuarioModel._PATH);
-
-            var user = usuarios.Find(x => x.Split(";")[0] == userId.ToString());
-
-            string[] username = user.Split(";");
-
-            System.Console.WriteLine(user);
-
-            return username[4];
         }
 
         // [Route("Obter-f")]
