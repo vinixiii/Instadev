@@ -89,37 +89,35 @@
                     </div>
                 </div>
                 <div class="cont">
-                    <form>
-                        <div class="coments">
-                            <ul class="flex-center">
-                                <div class="coracao">
-                                    <label><img src="./img/img-feed/Vectors2.svg" alt="Coração de like"  id="1" onclick="mudarImagem(1);"></label>
-                                </div>
-                                <div class="balao">
-                                    <img src="./img/img-feed/Vectorbalao.svg" alt="">
-                                </div>
-                                <div class="comentar">
-                                    <input type="text"  placeholder="Comentar..." required: required />
-                                </div>
-                            </ul>
+                    <div class="coments">
+                        <div class="flex-center">
+                            <div class="coracao">
+                                <label><img src="./img/img-feed/Vectors2.svg" alt="Coração de like"  id="1" onclick="mudarImagem(1);"></label>
+                            </div>
+                            <div class="balao">
+                                <img src="./img/img-feed/Vectorbalao.svg" alt="">
+                            </div>
+
+                            <form class="comentar" method="POST" action='@Url.Action("Comentar")' enctype="multipart/form-data" >
+                                <input name="IdPublicacao" value="@p.IdPublicacao" type="hidden">
+                                <input type="text"  placeholder="Comentar..." name="Mensagem" required />
+                                <button type="submit"></button>
+                            </form>
                         </div>
-                    </form>
+                    </div>
                 </div>
                 <div class="text">
                     <h5 class="curtidas">2077 curtidas</h5>
                 </div>
-                <div class="coments">
-                    <ul class="flex-center">
-                        <h4>yes_baby</h4>
-                        <p>thank you </p>
-                    </ul>
-                </div>
-                <div class="coments">
-                    <ul class="flex-center">
-                        <h4>king_pele</h4>
-                        <p>Esses são bons de bola, entende?</p>
-                    </ul>
-                </div>
+                @foreach (Comentario c in ViewBag.Comentarios)
+                {
+                    <div class="coments">
+                        <ul class="flex-center">
+                            <h4>@c.Username</h4>
+                            <p>@c.Mensagem</p>
+                        </ul>
+                    </div>  
+                }
             </div>
         }
     </section>        

@@ -36,6 +36,7 @@ namespace Instadev_06.Controllers
             {
                 //Criamos uma sessão com os dados do usuário
                 HttpContext.Session.SetString("_UserId", logado.Split(";")[0]);
+                HttpContext.Session.SetString("_Username", logado.Split(";")[4]);
                 return LocalRedirect("~/Feed");
             }
 
