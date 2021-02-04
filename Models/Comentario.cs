@@ -14,6 +14,7 @@ namespace Instadev_06.Models
         public int IdUsuario { get; set; }
 
         public int IdPublicacao { get; set; }
+        public string Username { get; set; }
 
         public const string PATH = "Database/Comentario.csv";
 
@@ -27,11 +28,12 @@ namespace Instadev_06.Models
             //Cria a pasta e o arquivos caso ainda não esteja criado
             CreateFolderAndFile(PATH);
         }
+        Random numRandom = new Random();
 
         public string PrepareLineCSV(Comentario c)
         {
             //Transforma o objeto Publicação em uma linha de arquivo CSV
-            return $"{c.IdComentario};{c.Mensagem};{c.IdUsuario};{c.IdPublicacao}";
+            return $"{c.IdComentario};{c.Mensagem};{c.IdUsuario};{c.IdPublicacao};{c.Username}";
         }
 
         // Implementado a Interface com o CRUD
@@ -70,6 +72,7 @@ namespace Instadev_06.Models
                 novoComentario.Mensagem = linha[1];
                 novoComentario.IdUsuario = int.Parse(linha[2]);
                 novoComentario.IdPublicacao = int.Parse(linha[3]);
+                novoComentario.Username = linha[4];
                 
                 comentarios.Add(novoComentario);
             }
@@ -92,7 +95,9 @@ namespace Instadev_06.Models
             //Reescrevemos o csv com a lista alterada
             RewriteCSV(PATH, linhas);
         }
+        public int GerarIdComentario()
+        {
+            return numRandom.Next();
+        }
     }
-
-
 }

@@ -1037,6 +1037,10 @@ span.psw {
     height: 34.3rem;
 }
 
+#legenda{
+    margin: 0 0 2rem 0;
+}
+
 .coracao {
     background-color: #FFFFFF;
 }
@@ -1065,6 +1069,7 @@ span.psw {
 
 .comentar input {
     width: 220px;
+    height: 100%;
     border: none;
     border-bottom-style: solid;
     margin-left: 17px;
@@ -1072,6 +1077,17 @@ span.psw {
     font-weight: 400;
     border-bottom: 1px solid #DCDCDC;
     background-color: #FFFFFF;
+    outline: none;
+}
+.comentar button{
+    width: 3rem;
+    height: 100%;
+    background-color: #0094f600;
+    border: none;
+    outline: none;
+}
+.comentar input:focus{
+    outline: none;
 }
 
 .text {

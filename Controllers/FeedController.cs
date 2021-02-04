@@ -11,9 +11,12 @@ namespace Instadev_06.Controllers
     {
         Usuario usuarioModel = new Usuario();
         Publicacao publicacaoModel = new Publicacao();
+        Comentario comentarioModel = new Comentario();
 
         public IActionResult Index()
         {
+            //Traz todods os comentarios
+            ViewBag.Comentarios = comentarioModel.ReadAll();
             //Traz todods os posts
             ViewBag.Posts = publicacaoModel.ReadAll();
 
@@ -97,5 +100,23 @@ namespace Instadev_06.Controllers
         //         publicacaoModel.Update(publicacao);
         //     }
         // }
+        [Route("Comentar")]
+        public IActionResult Comentar(IFormCollection form)
+        {
+            var userId = HttpContext.Session.GetString("_UserId");
+            var userName = HttpContext.Session.GetString("_Username");
+
+            Comentario novoComentario = new Comentario();
+            novoComentario.IdComentario = comentarioModel.GerarIdComentario();
+            novoComentario.Mensagem = form["Mensagem"];
+            novoComentario.IdUsuario = int.Parse(userId);
+            novoComentario.IdPublicacao = int.Parse(form["IdPublicacao"]);
+            novoComentario.Username = userName;
+
+            comentarioModel.Create(novoComentario);
+
+            return LocalRedirect("~/Feed");
+        }
+        
     }
 }
