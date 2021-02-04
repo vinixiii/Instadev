@@ -30,7 +30,7 @@ namespace Instadev_06.Controllers
         }
         [Route("EditarPerfil-Alterar-dados")]
         public IActionResult AlterarDados(IFormCollection form)
-        {
+        {            
             Usuario novoUsuario = MostrarUsuario();
             novoUsuario.Nome = form["Nome"];
             novoUsuario.Foto = form["Foto"];
@@ -53,6 +53,17 @@ namespace Instadev_06.Controllers
                 }
                 
                 novoUsuario.Foto = file.FileName;           
+            } else {
+                //Obter foto do usuario logado
+                var userId = HttpContext.Session.GetString("_UserId");
+
+                List<string> usuarios = usuarioModel.ReadAllLinesCSV(usuarioModel._PATH);
+
+                var usuario = usuarios.Find(x => x.Split(";")[0] == userId);
+
+                var atributo = usuario.Split(";");
+
+                novoUsuario.Foto = atributo[2];
             }
 
             novoUsuario.DataNascimento = DateTime.Parse(form["DataNascimento"]);
