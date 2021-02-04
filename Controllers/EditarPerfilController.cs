@@ -81,6 +81,7 @@ namespace Instadev_06.Controllers
                 publicacao.IdUsuario = int.Parse(linha[3]);
                 publicacao.Likes = int.Parse(linha[4]);
                 publicacao.FotoUsuario = file.FileName;
+                publicacao.Username = novoUsuario.Username;
 
                 publicacaoModel.Update(publicacao);
             }
@@ -96,8 +97,19 @@ namespace Instadev_06.Controllers
             if (userId == id.ToString())
             {
                 usuarioModel.Delete(id);
-
             }
+
+            List<string> posts = publicacaoModel.ReadAllLinesCSV(publicacaoModel._PATH);
+
+            var pub = posts.FindAll(x => x.Split(";")[3] == userId);
+
+            foreach (string item in pub)
+            {
+                string[] linha = item.Split(";");
+
+                publicacaoModel.Delete(int.Parse(linha[0]));
+            }
+
             return LocalRedirect("~/Login");
         }
     }

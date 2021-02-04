@@ -9,16 +9,12 @@ namespace Instadev_06.Models
     public class Publicacao : InstadevBase , IPublicacao
     {
         public int IdPublicacao { get; set; }
-
         public string Imagem { get; set; }
-
         public string Legenda { get; set; }
-
         public int IdUsuario { get; set; }
-
         public int Likes { get; set; }
-
         public string FotoUsuario { get; set; }
+        public string Username { get; set; }
         
         public const string PATH = "Database/Publicacao.csv";
 
@@ -36,7 +32,7 @@ namespace Instadev_06.Models
         public string PrepareLineCSV(Publicacao p)
         {
             //Transforma o objeto Publicação em uma linha de arquivo CSV
-            return $"{p.IdPublicacao};{p.Imagem};{p.Legenda};{p.IdUsuario};{p.Likes};{p.FotoUsuario}";
+            return $"{p.IdPublicacao};{p.Imagem};{p.Legenda};{p.IdUsuario};{p.Likes};{p.FotoUsuario};{p.Username}";
         }
 
         // Implementado a Interface com o CRUD
@@ -77,6 +73,7 @@ namespace Instadev_06.Models
                 novaPublicacao.IdUsuario = int.Parse(linha[3]);
                 novaPublicacao.Likes = int.Parse(linha[4]);
                 novaPublicacao.FotoUsuario = linha[5];
+                novaPublicacao.Username = linha[6];
                 
                 publicacoes.Add(novaPublicacao);
             }
