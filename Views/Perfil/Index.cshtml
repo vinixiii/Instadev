@@ -11,9 +11,9 @@
                     <h1>@ViewBag.UserLogado.Username</h1>
                 </div>
                 <div class="info-numbers">
-                    <p>0 publicações</p>
-                    <p>128 seguindo</p>
-                    <p>214 seguidores</p>
+                    <p>@ViewBag.NumPosts publicações</p>
+                    <p>0 seguindo</p>
+                    <p>0 seguidores</p>
                 </div>
                 <div class="description">
                     <p><strong>@ViewBag.UserLogado.Nome</strong></p>
@@ -58,8 +58,8 @@
                                 </div>
                             </div>
                             <div class="like-and-comment">
-                                <img id="@p.IdPublicacao" src="./img/img-perfil/like.svg" alt="" onclick="curtir(@p.IdPublicacao)">
-                                <img src="./img/img-perfil/comment.svg" alt="">
+                                <img id="@p.IdPublicacao" src="~/img/img-perfil/like.svg" alt="" onclick="curtir(@p.IdPublicacao)">
+                                <img src="~/img/img-perfil/comment.svg" alt="Comentar">
                             </div>
                             <p>1954 curtidas</p>
                             <ul class="comments">
@@ -73,11 +73,11 @@
                                                     <h3>@c.Username</h3>
                                                     <p>@c.Mensagem</p>
                                                 </div>
-                                                <img id="@c." src="./img/img-perfil/like.svg" alt="" onclick="curtir(2)">
+                                                <img id="@c.IdComentario" src="./img/img-perfil/like.svg" alt="" onclick="curtir(@c.IdComentario)">
                                             </div>
                                         </li>
                                     }
-                                }                                
+                                }                             
                             </ul>
                             @* <p id="view-all-comments">Ver todos os 585 comentários</p> *@
                         </div>

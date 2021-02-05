@@ -13,7 +13,7 @@ namespace Instadev_06.Controllers
         Publicacao publicacaoModel = new Publicacao();
         Comentario comentarioModel = new Comentario();
 
-        public IActionResult Index(IFormCollection form)
+        public IActionResult Index(IFormCollection form, string mine)
         {
             var userId = HttpContext.Session.GetString("_UserId");
             ViewBag.UserLogado = usuarioModel.ObterUsuarioDaSessao(int.Parse(userId));
@@ -71,5 +71,19 @@ namespace Instadev_06.Controllers
 
             return usuario;
         }
+
+        // [Route("bla")]
+        // public IActionResult HandleButtonClick(string mine)
+        // {
+        //     int num = int.Parse(mine);
+        //     if(num == 0)
+        //     {
+        //         numero = 1;
+        //     } else {
+        //         numero = 0;
+        //     }
+
+        //     return View("Index", numero);
+        // }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Instadev_06.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -16,13 +17,23 @@ namespace Instadev_06.Controllers
         public IActionResult Index()
         {
             ViewBag.Comentarios = comentarioModel.ReadAll();
+
             ViewBag.UserLogado = MostrarUsuario();
+
             ViewBag.PublicacoesUser = ExibirPublicacoes();
+
+            //Exibe número de publicações
+            List<Publicacao> postsPerfil = new List<Publicacao>();
+            postsPerfil = ExibirPublicacoes();
+            int numPosts = postsPerfil.Count();
+            ViewBag.NumPosts = numPosts;
+            //Exibe número de publicações
+            
             // System.Console.WriteLine(ViewBag.PublicacoesUser.Imagem);
             return View();
         }
 
-        [Route("Perfil-@ViewBag.userLogado.Nome")]
+        [Route("Perfil/@ViewBag.UserLogado.Username")]
         public Usuario MostrarUsuario()
         {
             var userId = HttpContext.Session.GetString("_UserId");

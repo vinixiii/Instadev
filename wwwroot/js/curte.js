@@ -5,11 +5,11 @@ function curtir(id) {
     console.log(id);
 
     if(like == "unliked") {
-        heart.src="./img/like-painted.svg";
+        heart.src="./img/img-perfil/like-painted.svg";
         like = "liked";
         console.log(heart);
     } else {
-        heart.src="./img/like.svg";
+        heart.src="./img/img-perfil/like.svg";
         like = "unliked";
     }
 };
