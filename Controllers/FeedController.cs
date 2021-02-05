@@ -75,31 +75,6 @@ namespace Instadev_06.Controllers
             return LocalRedirect("~/Feed");
         }
 
-        // [Route("Obter-f")]
-        // public void AlterarFoto()
-        // {
-            
-        //     var novoUsuario = ViewBag.UsuarioAtualizado;
-
-        //     List<string> posts = publicacaoModel.ReadAllLinesCSV(publicacaoModel._PATH);
-
-        //     var pub = posts.FindAll(x => x.Split(";")[3] == novoUsuario.IdUsuario.ToString());
-
-        //     foreach (string item in pub)
-        //     {
-        //         string[] linha = item.Split(";");
-
-        //         Publicacao publicacao = new Publicacao();
-        //         publicacao.IdPublicacao = int.Parse(linha[0]);
-        //         publicacao.Imagem = linha[1];
-        //         publicacao.Legenda = linha[2];
-        //         publicacao.IdUsuario = int.Parse(novoUsuario.IdUsuario);
-        //         publicacao.Likes = int.Parse(linha[4]);
-        //         publicacao.FotoUsuario = novoUsuario.Foto;
-
-        //         publicacaoModel.Update(publicacao);
-        //     }
-        // }
         [Route("Comentar")]
         public IActionResult Comentar(IFormCollection form)
         {
@@ -117,6 +92,6 @@ namespace Instadev_06.Controllers
 
             return LocalRedirect("~/Feed");
         }
-        
+
     }
 }

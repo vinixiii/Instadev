@@ -116,12 +116,15 @@
                 </div>
                 @foreach (Comentario c in ViewBag.Comentarios)
                 {
-                    <div class="coments">
-                        <ul class="flex-center">
-                            <h4>@c.Username</h4>
-                            <p>@c.Mensagem</p>
-                        </ul>
-                    </div>  
+                    @if(p.IdPublicacao == c.IdPublicacao)
+                    {
+                        <div class="coments">
+                            <ul class="flex-center">
+                                <h4>@c.Username</h4>
+                                <p>@c.Mensagem</p>
+                            </ul>
+                        </div>
+                    }
                 }
             </div>
         }
