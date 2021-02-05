@@ -9,6 +9,7 @@
             <div class="info-text">
                 <div class="username">
                     <h1>@ViewBag.UsuarioClicado.Username</h1>
+                    <button class="btn1">Seguir</button>
                 </div>
                 <div class="info-numbers">
                     <p>0 publicações</p>
@@ -40,10 +41,17 @@
                     <div class="post-info">
                         <div class="interaction">
                             <div class="user-info">
+                                @* Imagem do usuario dono do perfil *@
                                 <img src="~/img/perfil/@ViewBag.UsuarioClicado.Foto" alt="">
                                 <div class="username-and-location">
                                     <h2>@ViewBag.UsuarioClicado.Username</h2>
                                     <p>Rio de Janeiro, Brazil</p>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="comments-text subtitle">
+                                    <h3>@p.Username</h3>
+                                    <p>@p.Legenda</p>
                                 </div>
                             </div>
                             <div class="like-and-comment">
@@ -52,44 +60,23 @@
                             </div>
                             <p>1954 curtidas</p>
                             <ul class="comments">
-                                <li>
-                                    <div class="comment">
-                                        <div class="comments-text">
-                                            <h3>fausto_silva</h3>
-                                            <p>Esse cara é fera bixo</p>
-                                        </div>
-                                        <img id="2" src="./img/img-perfil/like.svg" alt="" onclick="curtir(2)">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="comment">
-                                        <div class="comments-text">
-                                            <h3>yes_baby</h3>
-                                            <p>thank you</p>
-                                        </div>
-                                        <img id="3" src="./img/img-perfil/like.svg" alt="" onclick="curtir(3)">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="comment">
-                                        <div class="comments-text">
-                                            <h3>adriano_stark</h3>
-                                            <p>Quando eu adormecer, vou sonhar com você. É sempre você.</p>
-                                        </div>
-                                        <img id="4" src="./img/img-perfil/like.svg" alt="" onclick="curtir(4)">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="comment">
-                                        <div class="comments-text">
-                                            <h3>yes_baby</h3>
-                                            <p>thank you</p>
-                                        </div>
-                                        <img id="5" src="./img/img-perfil/like.svg" alt="" onclick="curtir(5)">
-                                    </div>
-                                </li>
+                                @foreach (Comentario c in ViewBag.Comentarios)
+                                {
+                                    @if(p.IdPublicacao == c.IdPublicacao)
+                                    {
+                                        <li>
+                                            <div class="comment">
+                                                <div class="comments-text">
+                                                    <h3>@c.Username</h3>
+                                                    <p>@c.Mensagem</p>
+                                                </div>
+                                                <img id="2" src="./img/img-perfil/like.svg" alt="" onclick="curtir(2)">
+                                            </div>
+                                        </li>
+                                    }
+                                }                                
                             </ul>
-                            <p id="view-all-comments">Ver todos os 585 comentários</p>
+                            @* <p id="view-all-comments">Ver todos os 585 comentários</p> *@
                         </div>
                     </div>
                 </div>

@@ -1324,7 +1324,7 @@ span.psw {
     font-size: 1.3rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 .interaction>p {
@@ -1351,7 +1351,7 @@ span.psw {
 .like-and-comment img {
     width: 2.35rem;
     height: 2rem;
-    margin: 3.5rem 0 0.5rem 0;
+    margin: 1rem 0 0.5rem 0;
     cursor: pointer;
 }
 
@@ -1392,6 +1392,10 @@ span.psw {
     font-size: 1.3rem;
     margin-right: 1.5rem;
     cursor: pointer;
+}
+
+.subtitle {
+    margin-top: 1rem;
 }
 
 #view-all-comments {

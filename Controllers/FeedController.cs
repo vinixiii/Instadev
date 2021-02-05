@@ -17,6 +17,7 @@ namespace Instadev_06.Controllers
         {
             //Traz todods os comentarios
             ViewBag.Comentarios = comentarioModel.ReadAll();
+            
             //Traz todods os posts
             ViewBag.Posts = publicacaoModel.ReadAll();
 

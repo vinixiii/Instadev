@@ -11,12 +11,14 @@ namespace Instadev_06.Controllers
     {
         Usuario usuarioModel = new Usuario();
         Publicacao publicacaoModel = new Publicacao();
-        PerfilController perfil = new PerfilController();
+        Comentario comentarioModel = new Comentario();
 
         public IActionResult Index(IFormCollection form)
         {
             var userId = HttpContext.Session.GetString("_UserId");
             ViewBag.UserLogado = usuarioModel.ObterUsuarioDaSessao(int.Parse(userId));
+
+            ViewBag.Comentarios = comentarioModel.ReadAll();
             
             ViewBag.UsuarioClicado = ObterUsuarioClicado(int.Parse(form["IdAmigo"]));
 
@@ -43,6 +45,7 @@ namespace Instadev_06.Controllers
                 publicacao.Legenda = linha[2];
                 publicacao.IdUsuario = int.Parse(linha[3]);
                 publicacao.Likes = int.Parse(linha[4]);
+                publicacao.Username = linha[6];
 
                 posts.Add(publicacao);
             }
