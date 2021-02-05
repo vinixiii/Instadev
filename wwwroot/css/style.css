@@ -1463,3 +1463,24 @@ span.psw {
 .invisivel {
     display: none;
 }
+
+.friends li {
+    position: relative;
+}
+
+.friends button {
+    position: absolute;
+    width: 6.2rem;
+    height: 6.2rem;
+    top: 0px;
+    left: -20px;
+    background-color: #da222200;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 2rem;
+}
+
+.friends input {
+    display: none;
+}
