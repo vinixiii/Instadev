@@ -11,9 +11,11 @@ namespace Instadev_06.Controllers
     {
         Usuario usuarioModel = new Usuario();
         Publicacao publicacaoModel = new Publicacao();
+        Comentario comentarioModel = new Comentario();
         
         public IActionResult Index()
         {
+            ViewBag.Comentarios = comentarioModel.ReadAll();
             ViewBag.UserLogado = MostrarUsuario();
             ViewBag.PublicacoesUser = ExibirPublicacoes();
             // System.Console.WriteLine(ViewBag.PublicacoesUser.Imagem);
@@ -49,6 +51,7 @@ namespace Instadev_06.Controllers
                 publicacao.Legenda = linha[2];
                 publicacao.IdUsuario = int.Parse(linha[3]);
                 publicacao.Likes = int.Parse(linha[4]);
+                publicacao.Username = linha[6];
 
                 posts.Add(publicacao);
             }

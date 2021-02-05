@@ -1,14 +1,15 @@
 @{
-    ViewData["Title"] = "Instadev G6 | Perfil";
+    ViewData["Title"] = $"Perfil de {@ViewBag.UsuarioClicado.Username}";
 }
 
 <section id="info">
     <div class="info-container">
         <div class="info-content">
-            <img src="~/img/perfil/@ViewBag.UserLogado.Foto" alt="foto de perfil">
+            <img src="~/img/perfil/@ViewBag.UsuarioClicado.Foto" alt="foto de perfil">
             <div class="info-text">
                 <div class="username">
-                    <h1>@ViewBag.UserLogado.Username</h1>
+                    <h1>@ViewBag.UsuarioClicado.Username</h1>
+                    <button class="btn1">Seguir</button>
                 </div>
                 <div class="info-numbers">
                     <p>0 publicações</p>
@@ -16,11 +17,7 @@
                     <p>214 seguidores</p>
                 </div>
                 <div class="description">
-                    <p><strong>@ViewBag.UserLogado.Nome</strong></p>
-                    <div class="options">
-                        <a asp-area="" asp-controller="EditarPerfil" asp-action="Index" title="Editar perfil">Editar perfil</a>
-                        <a asp-area="" asp-controller="Login" asp-action="Deslogar" title="Sair">Sair</a>
-                    </div>
+                    <p><strong>@ViewBag.UsuarioClicado.Nome</strong></p>
                 </div>
             </div>
         </div>
@@ -37,7 +34,7 @@
 <article id="posts">
     <div class="posts-container">
         <div class="posts-content">
-            @foreach (Publicacao p in ViewBag.PublicacoesUser)
+            @foreach (Publicacao p in ViewBag.PostAmigo)
             {
                 <div class="post-profile">
                     <img src="~/img/publicacoes/@p.Imagem" alt="">
@@ -45,9 +42,9 @@
                         <div class="interaction">
                             <div class="user-info">
                                 @* Imagem do usuario dono do perfil *@
-                                <img src="~/img/perfil/@ViewBag.UserLogado.Foto" alt="">
+                                <img src="~/img/perfil/@ViewBag.UsuarioClicado.Foto" alt="">
                                 <div class="username-and-location">
-                                    <h2>@ViewBag.UserLogado.Username</h2>
+                                    <h2>@ViewBag.UsuarioClicado.Username</h2>
                                     <p>Rio de Janeiro, Brazil</p>
                                 </div>
                             </div>
@@ -58,7 +55,7 @@
                                 </div>
                             </div>
                             <div class="like-and-comment">
-                                <img id="@p.IdPublicacao" src="./img/img-perfil/like.svg" alt="" onclick="curtir(@p.IdPublicacao)">
+                                <img id="1" src="./img/img-perfil/like.svg" alt="" onclick="curtir(1)">
                                 <img src="./img/img-perfil/comment.svg" alt="">
                             </div>
                             <p>1954 curtidas</p>
@@ -73,7 +70,7 @@
                                                     <h3>@c.Username</h3>
                                                     <p>@c.Mensagem</p>
                                                 </div>
-                                                <img id="@c." src="./img/img-perfil/like.svg" alt="" onclick="curtir(2)">
+                                                <img id="2" src="./img/img-perfil/like.svg" alt="" onclick="curtir(2)">
                                             </div>
                                         </li>
                                     }

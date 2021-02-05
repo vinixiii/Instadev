@@ -9,12 +9,17 @@
             <ul>
                 @foreach (Usuario u in ViewBag.Usuarios)
                 {
-                    <div class="friends" asp-area="" asp-controller="Amigo" asp-action="Index" title="">
+                    <form class="friends" method="POST" action='Amigo' enctype="multipart/form-data">
                         <li> 
                             <img src="~/img/perfil/@u.Foto" alt="Foto do perfil do amigo Vin Diesel">
                             <p class="nome-stories">@u.Username</p>
+                            <input type="hidden" value="@u.IdUsuario" name="IdAmigo"></input>
+                            <input type="hidden" value="@u.Nome" name="NomeAmigo"></input>
+                            <input type="hidden" value="@u.Foto" name="FotoAmigo"></input>
+                            <input type="hidden" value="@u.Username" name="UsernameAmigo"></input>
+                            <button type="submit"></button>
                         </li>
-                    </div>
+                    </form>
                 }
             </ul>
         </div>
@@ -111,12 +116,27 @@
                 </div>
                 @foreach (Comentario c in ViewBag.Comentarios)
                 {
-                    <div class="coments">
-                        <ul class="flex-center">
-                            <h4>@c.Username</h4>
-                            <p>@c.Mensagem</p>
-                        </ul>
-                    </div>  
+                    @if(p.IdPublicacao == c.IdPublicacao)
+                    {
+                        <div class="coments">
+                            <ul class="flex-center">
+                                <h4>@c.Username</h4>
+                                <p>@c.Mensagem</p>
+                            </ul>
+                        </div>
+                        <div class="coments">
+                            <ul class="flex-center">
+                                <h4>@c.Username</h4>
+                                <p>@c.Mensagem</p>
+                            </ul>
+                        </div>
+                        <div class="coments">
+                            <ul class="flex-center">
+                                <h4>@c.Username</h4>
+                                <p>@c.Mensagem</p>
+                            </ul>
+                        </div>
+                    }
                 }
             </div>
         }
