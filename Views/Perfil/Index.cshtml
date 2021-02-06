@@ -75,7 +75,7 @@
                                                     <p>@c.Mensagem</p>
                                                 </div>
                                                 <img id="@c.IdComentario" src="./img/img-perfil/like.svg" alt="" onclick="curtir(@c.IdComentario)">
-                                                <a asp-area="" asp-controller="Feed" asp-action="ExcluirComentario" asp-route-id="@c.IdComentario"><i class="far fa-trash-alt"></i></a>
+                                                <a asp-area="" asp-controller="Perfil" asp-action="ExcluirComentario" asp-route-id="@c.IdComentario"><i class="far fa-trash-alt"></i></a>
                                             </div>
                                         </li>
                                     }

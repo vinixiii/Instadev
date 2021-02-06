@@ -87,5 +87,32 @@ namespace Instadev_06.Controllers
 
             return LocalRedirect("~/Perfil");
         }
+
+        [Route("Excluir-Comentario-Perfil")]
+        public IActionResult ExcluirComentario(int id)
+        {
+            var userId = HttpContext.Session.GetString("_UserId");
+            
+            List<string> comments = comentarioModel.ReadAllLinesCSV(comentarioModel._PATH);
+
+            var comment = comments.Find(x => x.Split(";")[0] == id.ToString());
+            string[] atributo = comment.Split(";");
+
+            List<string> posts = publicacaoModel.ReadAllLinesCSV(publicacaoModel._PATH);
+            
+            //Traz a linha do post que tem esses 2 itens iguais
+            var pub = posts.Find(x => x.Split(";")[0] == atributo[3]);
+            
+            System.Console.WriteLine(pub);
+            string[] atributoPost = pub.Split(";");
+
+            if(userId == atributoPost[3] && atributo[3] == atributoPost[0]) {
+                comentarioModel.Delete(id);
+            } else if(userId == atributo[2]) {
+                comentarioModel.Delete(id);
+            }
+
+            return LocalRedirect("~/Perfil");
+        }
     }
 }

@@ -27,6 +27,7 @@ namespace Instadev_06.Controllers
 
             return userLogado;
         }
+        
         [Route("EditarPerfil-Alterar-dados")]
         public IActionResult AlterarDados(IFormCollection form)
         {            
