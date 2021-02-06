@@ -33,7 +33,7 @@ namespace Instadev_06.Controllers
             return View();
         }
 
-        [Route("Perfil/@ViewBag.UserLogado.Username")]
+        [Route("Perfil/{id}")]
         public Usuario MostrarUsuario()
         {
             var userId = HttpContext.Session.GetString("_UserId");
@@ -42,7 +42,7 @@ namespace Instadev_06.Controllers
             return userLogado;
         }
 
-        [Route("Publicacoes-Perfil")]
+        [Route("Publicacoes/{id}")]
         public List<Publicacao> ExibirPublicacoes()
         {
             List<Publicacao> posts = new List<Publicacao>();
@@ -68,6 +68,24 @@ namespace Instadev_06.Controllers
             }
 
             return posts;
+        }
+
+        [Route("Excluir-Post")]
+        public IActionResult ExcluirPost(int id)
+        {
+            publicacaoModel.Delete(id);
+
+            List<string> comentarios = comentarioModel.ReadAllLinesCSV(comentarioModel._PATH);
+
+            var comentario = comentarios.FindAll(x => x.Split(";")[3] == id.ToString());
+
+            foreach (string item in comentario)
+            {
+                string[] linha = item.Split(";");
+                comentarioModel.Delete(int.Parse(linha[0]));
+            }
+
+            return LocalRedirect("~/Perfil");
         }
     }
 }

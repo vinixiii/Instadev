@@ -12,7 +12,6 @@ namespace Instadev_06.Controllers
     {
         Usuario usuarioModel = new Usuario();
         Publicacao publicacaoModel = new Publicacao();
-
         
         public IActionResult Index()
         {
