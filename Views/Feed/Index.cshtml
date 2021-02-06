@@ -95,7 +95,9 @@
                 <div class="cont">
                     <div class="coments">
                         <div class="flex-center">
-                            <img class="coracao" id="5" src="./img/img-perfil/like.svg" alt="" onclick="curtir(5)">
+                            <a asp-area="" asp-controller="Feed" asp-action="Curtir" asp-route-id="@p.IdPublicacao">
+                                <img class="coracao" id="p.IdPublicacao" src="./img/img-perfil/like.svg" alt="" onclick="curtir(@p.IdPublicacao)">
+                            </a>
                             <div class="balao" id="@p.Imagem">
                                 <img src="./img/img-feed/Vectorbalao.svg" alt="">
                             </div>
@@ -108,7 +110,7 @@
                     </div>
                 </div>
                 <div class="text">
-                    <h5 class="curtidas">2077 curtidas</h5>
+                    <h5 class="curtidas">@p.Likes curtidas</h5>
                 </div>
                 <ul class="comments">
                     @foreach (Comentario c in ViewBag.Comentarios)
