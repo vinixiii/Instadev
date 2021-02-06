@@ -42,6 +42,7 @@
                 <div class="post-profile">
                     <img src="~/img/publicacoes/@p.Imagem" alt="">
                     <div class="post-info">
+                        <a class="icone-excluir" asp-area="" asp-controller="Perfil" asp-action="ExcluirPost" asp-route-id="@p.IdPublicacao"><i class="far fa-times-circle fa-2x"></i></a>
                         <div class="interaction">
                             <div class="user-info">
                                 @* Imagem do usuario dono do perfil *@
@@ -74,6 +75,7 @@
                                                     <p>@c.Mensagem</p>
                                                 </div>
                                                 <img id="@c.IdComentario" src="./img/img-perfil/like.svg" alt="" onclick="curtir(@c.IdComentario)">
+                                                <a asp-area="" asp-controller="Feed" asp-action="ExcluirComentario" asp-route-id="@c.IdComentario"><i class="far fa-trash-alt"></i></a>
                                             </div>
                                         </li>
                                     }

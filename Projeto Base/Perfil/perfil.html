@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instadev | Perfil</title>
+    <script src="https://kit.fontawesome.com/86484b0d96.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -45,6 +46,7 @@
                 <div class="post">
                     <img src="./img/thank-you 5.png" alt="">
                     <div class="post-info">
+                        <a class="icone-excluir" asp-area="" asp-controller="Jogador" asp-action="Excluir" asp-route-id="@j.IdJogador"><i class="far fa-times-circle fa-2x"></i></a>
                         <div class="interaction">
                             <div class="user-info">
                                 <img src="./img/thank-you 4.png" alt="">
@@ -93,6 +95,7 @@
                                             <p>thank you</p>
                                         </div>
                                         <img id="5" src="./img/like.svg" alt="" onclick="curtir(5)">
+                                        <a asp-area="" asp-controller="Jogador" asp-action="Excluir" asp-route-id="@j.IdJogador"><i class="far fa-trash-alt"></i></a>
                                     </div>
                                 </li>
                             </ul>

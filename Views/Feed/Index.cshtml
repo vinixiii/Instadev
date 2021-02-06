@@ -122,6 +122,7 @@
                                         <p>@c.Mensagem</p>
                                     </div>
                                     <img class="heart" id="@c.IdComentario" src="./img/img-perfil/like.svg" alt="" onclick="curtir(@c.IdComentario)">
+                                    <a class="trash" asp-area="" asp-controller="Feed" asp-action="ExcluirComentario" asp-route-id="@c.IdComentario"><i class="far fa-trash-alt"></i></a>
                                 </div>
                             </li>
                         }

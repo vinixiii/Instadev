@@ -1166,15 +1166,22 @@ span.psw {
 }
 
 .heart {
-    margin-right: 2.2rem;
+    margin-top: 0;
 }
 
 .comment-feed {
     width: 100%;
     display: flex;
+    align-items: center;
     word-break: normal;
     margin-left: 2.2rem;
     margin-bottom: 0;
+}
+
+.trash {
+    margin-right: 2.2rem;
+    margin-left: 0;
+    font-size: 1.3rem;
 }
 
 /* ----------------fim do feed---------------------*/
@@ -1324,10 +1331,26 @@ span.psw {
 }
 
 .post-info {
+    position: relative;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.post-info > a {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    color: #ed4956;
+}
+
+.comment a {
+    align-self: flex-start;
+    justify-self: flex-end;
+    cursor: pointer;
+    margin-left: 1rem;
+    color: black;
 }
 
 .interaction {
@@ -1385,6 +1408,7 @@ span.psw {
     align-self: flex-start;
     justify-self: flex-end;
     cursor: pointer;
+    margin-top: 0.3rem;
 }
 
 .comment {
