@@ -787,11 +787,11 @@ span.psw {
 
 .content ul::-webkit-scrollbar {
     width: 0;
+    height: 0;
 }
 
 .content li {
     text-align: center;
-    padding-top: 2rem;
 }
 
 .flex-center-bt {
@@ -1184,6 +1184,29 @@ span.psw {
     font-size: 1.3rem;
 }
 
+.box-comments {
+    height: 8rem;
+    list-style: none;
+    overflow-y: auto;
+}
+
+.box-comments::-webkit-scrollbar {
+    width: 0;
+}
+
+.box-comments li {
+    overflow-wrap: break-word;
+}
+
+.box-comments li img {
+    width: 1.5rem;
+    height: 1.312rem;
+    align-self: flex-start;
+    justify-self: flex-end;
+    cursor: pointer;
+    margin-top: 0.3rem;
+}
+
 /* ----------------fim do feed---------------------*/
 
 
@@ -1395,7 +1418,13 @@ span.psw {
 }
 
 .comments {
+    height: 16rem;
     list-style: none;
+    overflow-y: auto;
+}
+
+.comments::-webkit-scrollbar {
+    width: 0;
 }
 
 .comments li {
@@ -1519,6 +1548,7 @@ span.psw {
     outline: none;
     cursor: pointer;
     margin: 2rem;
+    border-radius: 50%;
 }
 
 .friends input {
