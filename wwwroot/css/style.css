@@ -847,6 +847,7 @@ span.psw {
     width: 6.2rem;
     height: 6.2rem;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .alinhado p {
@@ -854,14 +855,23 @@ span.psw {
     width: 200px;
 }
 
-.username_feed p:first-child {
-    color: black;
-}
-
 .username_feed {
     font-weight: 600;
     font-size: 16px;
     color: #b6b6b6;
+}
+
+.username_feed a {
+    text-decoration: none;
+    color: #b6b6b6;
+}
+
+.username_feed a:hover {
+    cursor: pointer;
+}
+
+.username_feed a:first-child {
+    color: black;
 }
 
 .friend-list ul li h1 {
@@ -1038,29 +1048,20 @@ span.psw {
 }
 
 #legenda{
-    margin: 0 0 2rem 0;
+    margin: 0 0 1.5rem 0;
 }
 
 .coracao {
-    background-color: #FFFFFF;
-}
-
-.coracao img {
-    background-color: #FFFFFF;
-}
-
-.coracao label {
-    margin-left: 21.33px;
-    background-color: #FFFFFF;
-}
-
-.coracao input[type='checkbox'] {
-    display: none;
+    width: 2.35rem;
+    height: 2rem;
+    margin-left: 2.2rem;
+    cursor: pointer;
 }
 
 .balao {
     margin-left: 19.33px;
     background-color: #FFFFFF;
+    cursor: pointer;
 }
 
 .comentar {
@@ -1068,8 +1069,8 @@ span.psw {
 }
 
 .comentar input {
-    width: 220px;
-    height: 100%;
+    width: 22rem;
+    height: 2.5rem;
     border: none;
     border-bottom-style: solid;
     margin-left: 17px;
@@ -1164,6 +1165,17 @@ span.psw {
     display: flex;
 }
 
+.heart {
+    margin-right: 2.2rem;
+}
+
+.comment-feed {
+    width: 100%;
+    display: flex;
+    word-break: normal;
+    margin-left: 2.2rem;
+    margin-bottom: 0;
+}
 
 /* ----------------fim do feed---------------------*/
 
