@@ -1417,6 +1417,10 @@ span.psw {
     margin-right: 1rem;
 }
 
+.like-and-comment a {
+    text-decoration: none;
+}
+
 .comments {
     height: 16rem;
     list-style: none;
