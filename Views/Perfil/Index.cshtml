@@ -1,5 +1,5 @@
 @{
-    ViewData["Title"] = "Instadev G6 | Perfil";
+    ViewData["Title"] = @ViewBag.UserLogado.Nome;
 }
 
 <section id="info">
@@ -49,7 +49,7 @@
                                 <img src="~/img/perfil/@ViewBag.UserLogado.Foto" alt="">
                                 <div class="username-and-location">
                                     <h2>@ViewBag.UserLogado.Username</h2>
-                                    <p>Rio de Janeiro, Brazil</p>
+                                    <p>São Paulo, SP</p>
                                 </div>
                             </div>
                             <div class="comment">

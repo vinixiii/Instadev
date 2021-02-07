@@ -80,20 +80,20 @@ namespace Instadev_06.Controllers
             return usuario;
         }
 
-        [Route("Excluir-Comentario-Amigo")]
-        public IActionResult ExcluirComentario(int id)
-        {
-            var userId = HttpContext.Session.GetString("_UserId");
-            comentarioModel.ExcluirComentario(id, userId);
+        // [Route("Excluir-Comentario-Amigo")]
+        // public IActionResult ExcluirComentario(int id)
+        // {
+        //     var userId = HttpContext.Session.GetString("_UserId");
+        //     comentarioModel.ExcluirComentario(id, userId);
 
-            return LocalRedirect("~/Amigo");
-        }
+        //     return LocalRedirect("~/Amigo");
+        // }
 
-        [Route("Like-Amigo")]
-        public IActionResult Curtir(int id)
-        {
-            publicacaoModel.Curtir(id);
-            return LocalRedirect("~/Amigo");
-        }
+        // [Route("Like-Amigo")]
+        // public IActionResult Curtir(int id)
+        // {
+        //     publicacaoModel.Curtir(id);
+        //     return LocalRedirect("~/Amigo");
+        // }
     }
 }

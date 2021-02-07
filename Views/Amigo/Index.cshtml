@@ -1,5 +1,5 @@
 @{
-    ViewData["Title"] = $"Perfil de {@ViewBag.UsuarioClicado.Username}";
+    ViewData["Title"] = @ViewBag.UsuarioClicado.Nome;
 }
 
 <section id="info">
@@ -45,7 +45,7 @@
                                 <img src="~/img/perfil/@ViewBag.UsuarioClicado.Foto" alt="">
                                 <div class="username-and-location">
                                     <h2>@ViewBag.UsuarioClicado.Username</h2>
-                                    <p>Rio de Janeiro, Brazil</p>
+                                    <p>São Paulo, SP</p>
                                 </div>
                             </div>
                             <div class="comment">
@@ -55,13 +55,11 @@
                                 </div>
                             </div>
                             <div class="like-and-comment">
-                                <a asp-area="" asp-controller="Amigo" asp-action="Curtir" asp-route-id="@p.IdPublicacao">
                                     <img id="@p.IdPublicacao" src="~/img/img-perfil/like.svg" alt="" onclick="curtir(@p.IdPublicacao)">
                                     <input type="hidden" value="@ViewBag.UsuarioClicado.IdUsuario" name="IdAmigo"></input>
                                     <input type="hidden" value="@ViewBag.UsuarioClicado.Nome" name="NomeAmigo"></input>
                                     <input type="hidden" value="@ViewBag.UsuarioClicado.Foto" name="FotoAmigo"></input>
                                     <input type="hidden" value="@ViewBag.UsuarioClicado.Username" name="UsernameAmigo"></input>
-                                </a>
                                 <img src="./img/img-perfil/comment.svg" alt="">
                             </div>
                             <p>@p.Likes curtidas</p>
@@ -77,7 +75,7 @@
                                                     <p>@c.Mensagem</p>
                                                 </div>
                                                 <img id="@c.IdComentario" src="./img/img-perfil/like.svg" alt="" onclick="curtir(@c.IdComentario)">
-                                                <a asp-area="" asp-controller="Amigo" asp-action="ExcluirComentario" asp-route-id="@c.IdComentario"><i class="far fa-trash-alt"></i></a>
+                                                <a href="#"><i class="far fa-trash-alt"></i></a>
                                             </div>
                                         </li>
                                     }
