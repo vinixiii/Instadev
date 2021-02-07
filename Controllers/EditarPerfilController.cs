@@ -12,7 +12,6 @@ namespace Instadev_06.Controllers
     {
         Usuario usuarioModel = new Usuario();
         Publicacao publicacaoModel = new Publicacao();
-
         
         public IActionResult Index()
         {
@@ -28,6 +27,7 @@ namespace Instadev_06.Controllers
 
             return userLogado;
         }
+        
         [Route("EditarPerfil-Alterar-dados")]
         public IActionResult AlterarDados(IFormCollection form)
         {            
@@ -55,15 +55,7 @@ namespace Instadev_06.Controllers
                 novoUsuario.Foto = file.FileName;           
             } else {
                 //Obter foto do usuario logado
-                var userId = HttpContext.Session.GetString("_UserId");
-
-                List<string> usuarios = usuarioModel.ReadAllLinesCSV(usuarioModel._PATH);
-
-                var usuario = usuarios.Find(x => x.Split(";")[0] == userId);
-
-                var atributo = usuario.Split(";");
-
-                novoUsuario.Foto = atributo[2];
+                novoUsuario.Foto = FotoUsuarioLogado();
             }
 
             novoUsuario.DataNascimento = DateTime.Parse(form["DataNascimento"]);
@@ -74,15 +66,13 @@ namespace Instadev_06.Controllers
 
             ViewBag.UsuarioAtualizado = novoUsuario;
 
-            //Alterar form posts - início
+            //Alterar posts - início
             List<string> posts = publicacaoModel.ReadAllLinesCSV(publicacaoModel._PATH);
 
             var pub = posts.FindAll(x => x.Split(";")[3] == novoUsuario.IdUsuario.ToString());
-
+            
             foreach (string item in pub)
             {
-                var file = form.Files[0];
-
                 string[] linha = item.Split(";");
 
                 Publicacao publicacao = new Publicacao();
@@ -91,12 +81,17 @@ namespace Instadev_06.Controllers
                 publicacao.Legenda = linha[2];
                 publicacao.IdUsuario = int.Parse(linha[3]);
                 publicacao.Likes = int.Parse(linha[4]);
-                publicacao.FotoUsuario = file.FileName;
+                if(form.Files.Count > 0) {
+                    var file = form.Files[0];
+                    publicacao.FotoUsuario = file.FileName;
+                } else {
+                    publicacao.FotoUsuario = FotoUsuarioLogado();
+                }
                 publicacao.Username = novoUsuario.Username;
 
                 publicacaoModel.Update(publicacao);
             }
-            //Alterar form posts - início
+            //Alterar posts - início
 
             return LocalRedirect("~/EditarPerfil");
         }
@@ -122,6 +117,20 @@ namespace Instadev_06.Controllers
             }
 
             return LocalRedirect("~/Login");
+        }
+
+        [Route("FotoUsuarioLogado")]
+        public string FotoUsuarioLogado()
+        {
+            var userId = HttpContext.Session.GetString("_UserId");
+
+            List<string> usuarios = usuarioModel.ReadAllLinesCSV(usuarioModel._PATH);
+
+            var usuario = usuarios.Find(x => x.Split(";")[0] == userId);
+
+            var atributo = usuario.Split(";");
+
+            return atributo[2];
         }
     }
 }

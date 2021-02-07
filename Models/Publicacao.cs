@@ -101,5 +101,26 @@ namespace Instadev_06.Models
         {
             return numRandom.Next();
         }
+
+        public void Curtir(int id)
+        {
+            List<string> posts = ReadAllLinesCSV(PATH);
+
+            var pub = posts.Find(x => x.Split(";")[0] == id.ToString());
+            System.Console.WriteLine(pub);
+
+            string[] linha = pub.Split(";");
+
+            Publicacao publicacao = new Publicacao();
+            publicacao.IdPublicacao = id;
+            publicacao.Imagem = linha[1];
+            publicacao.Legenda = linha[2];
+            publicacao.IdUsuario = int.Parse(linha[3]);
+            publicacao.Likes = int.Parse(linha[4]) + 1;
+            publicacao.FotoUsuario = linha[5]; 
+            publicacao.Username = linha[6];
+
+            Update(publicacao);
+        }
     }
 }

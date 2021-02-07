@@ -1,5 +1,5 @@
 @{
-    ViewData["Title"] = "Instadev G6 | Perfil";
+    ViewData["Title"] = @ViewBag.UserLogado.Nome;
 }
 
 <section id="info">
@@ -42,13 +42,14 @@
                 <div class="post-profile">
                     <img src="~/img/publicacoes/@p.Imagem" alt="">
                     <div class="post-info">
+                        <a asp-area="" asp-controller="Perfil" asp-action="ExcluirPost" asp-route-id="@p.IdPublicacao"><i class="far fa-times-circle fa-2x"></i></a>
                         <div class="interaction">
                             <div class="user-info">
                                 @* Imagem do usuario dono do perfil *@
                                 <img src="~/img/perfil/@ViewBag.UserLogado.Foto" alt="">
                                 <div class="username-and-location">
                                     <h2>@ViewBag.UserLogado.Username</h2>
-                                    <p>Rio de Janeiro, Brazil</p>
+                                    <p>São Paulo, SP</p>
                                 </div>
                             </div>
                             <div class="comment">
@@ -58,10 +59,12 @@
                                 </div>
                             </div>
                             <div class="like-and-comment">
-                                <img id="@p.IdPublicacao" src="~/img/img-perfil/like.svg" alt="" onclick="curtir(@p.IdPublicacao)">
+                                <a asp-area="" asp-controller="Perfil" asp-action="Curtir" asp-route-id="@p.IdPublicacao">
+                                    <img id="@p.IdPublicacao" src="~/img/img-perfil/like.svg" alt="" onclick="curtir(@p.IdPublicacao)">
+                                </a>
                                 <img src="~/img/img-perfil/comment.svg" alt="Comentar">
                             </div>
-                            <p>1954 curtidas</p>
+                            <p>@p.Likes curtidas</p>
                             <ul class="comments">
                                 @foreach (Comentario c in ViewBag.Comentarios)
                                 {
@@ -74,6 +77,7 @@
                                                     <p>@c.Mensagem</p>
                                                 </div>
                                                 <img id="@c.IdComentario" src="./img/img-perfil/like.svg" alt="" onclick="curtir(@c.IdComentario)">
+                                                <a asp-area="" asp-controller="Perfil" asp-action="ExcluirComentario" asp-route-id="@c.IdComentario"><i class="far fa-trash-alt"></i></a>
                                             </div>
                                         </li>
                                     }

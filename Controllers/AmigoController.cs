@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Instadev_06.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -13,7 +14,7 @@ namespace Instadev_06.Controllers
         Publicacao publicacaoModel = new Publicacao();
         Comentario comentarioModel = new Comentario();
 
-        public IActionResult Index(IFormCollection form, string mine)
+        public IActionResult Index(IFormCollection form)
         {
             var userId = HttpContext.Session.GetString("_UserId");
             ViewBag.UserLogado = usuarioModel.ObterUsuarioDaSessao(int.Parse(userId));
@@ -23,6 +24,13 @@ namespace Instadev_06.Controllers
             ViewBag.UsuarioClicado = ObterUsuarioClicado(int.Parse(form["IdAmigo"]));
 
             ViewBag.PostAmigo = ExibirPublicacoes(int.Parse(form["IdAmigo"]));
+
+            //Exibe número de publicações
+            List<Publicacao> postsPerfil = new List<Publicacao>();
+            postsPerfil = ExibirPublicacoes(int.Parse(form["IdAmigo"]));
+            int numPosts = postsPerfil.Count();
+            ViewBag.NumPosts = numPosts;
+            //Exibe número de publicações
 
             return View();
         }
@@ -72,18 +80,20 @@ namespace Instadev_06.Controllers
             return usuario;
         }
 
-        // [Route("bla")]
-        // public IActionResult HandleButtonClick(string mine)
+        // [Route("Excluir-Comentario-Amigo")]
+        // public IActionResult ExcluirComentario(int id)
         // {
-        //     int num = int.Parse(mine);
-        //     if(num == 0)
-        //     {
-        //         numero = 1;
-        //     } else {
-        //         numero = 0;
-        //     }
+        //     var userId = HttpContext.Session.GetString("_UserId");
+        //     comentarioModel.ExcluirComentario(id, userId);
 
-        //     return View("Index", numero);
+        //     return LocalRedirect("~/Amigo");
+        // }
+
+        // [Route("Like-Amigo")]
+        // public IActionResult Curtir(int id)
+        // {
+        //     publicacaoModel.Curtir(id);
+        //     return LocalRedirect("~/Amigo");
         // }
     }
 }

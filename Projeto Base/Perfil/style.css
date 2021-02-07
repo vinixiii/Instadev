@@ -153,10 +153,25 @@ body {
 }
 
 .post-info {
+    position: relative;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.post-info > a {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    color: #ed4956;
+}
+
+.comment a {
+    align-self: flex-start;
+    justify-self: flex-end;
+    cursor: pointer;
+    margin-left: 1rem;
 }
 
 .interaction {
@@ -216,6 +231,7 @@ body {
     align-self: flex-start;
     justify-self: flex-end;
     cursor: pointer;
+    margin-top: 0.3rem;
 }
 
 .comment {

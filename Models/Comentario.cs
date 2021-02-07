@@ -95,9 +95,33 @@ namespace Instadev_06.Models
             //Reescrevemos o csv com a lista alterada
             RewriteCSV(PATH, linhas);
         }
+
         public int GerarIdComentario()
         {
             return numRandom.Next();
+        }
+
+        public void ExcluirComentario(int idComentario, string idUsuario)
+        {            
+            List<string> comments = ReadAllLinesCSV(PATH);
+
+            var comment = comments.Find(x => x.Split(";")[0] == idComentario.ToString());
+            string[] atributo = comment.Split(";");
+
+            Publicacao publicacaoModel = new Publicacao();
+            List<string> posts = publicacaoModel.ReadAllLinesCSV(publicacaoModel._PATH);
+            
+            //Traz a linha do post que tem esses 2 itens iguais
+            var pub = posts.Find(x => x.Split(";")[0] == atributo[3]);
+            
+            System.Console.WriteLine(pub);
+            string[] atributoPost = pub.Split(";");
+
+            if(idUsuario == atributoPost[3] && atributo[3] == atributoPost[0]) {
+                Delete(idComentario);
+            } else if(idUsuario == atributo[2]) {
+                Delete(idComentario);
+            }
         }
     }
 }

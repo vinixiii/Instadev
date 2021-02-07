@@ -1,5 +1,5 @@
 @{
-    ViewData["Title"] = "Feed";
+    ViewData["Title"] = "Instadev";
 }
 
 <div class="container-feed">
@@ -24,15 +24,14 @@
             </ul>
         </div>
         <div class="alinhado">
-            <ul class="flex-center-bt">
+            <div class="flex-center-bt">
                 @* Imagem do usuário logado *@
-                <li><img src="~/img/perfil/@ViewBag.UserLogado.Foto" alt="Sua foto de perfil"></li>
+                <a asp-area="" asp-controller="Perfil" asp-action="Index" title=""><img src="~/img/perfil/@ViewBag.UserLogado.Foto" alt="Sua foto de perfil"></a>
                 <div class="username_feed">
-                    <p>@ViewBag.UserLogado.Username</p>
-                    <p>@ViewBag.UserLogado.Nome</p>
+                    <a asp-area="" asp-controller="Perfil" asp-action="Index" title=""><p>@ViewBag.UserLogado.Username</p></a>
+                    <a asp-area="" asp-controller="Perfil" asp-action="Index" title=""><p>@ViewBag.UserLogado.Nome</p></a>
                 </div>
-
-            </ul>
+            </div>
         </div>
     </section>
     <section class="post">
@@ -79,7 +78,7 @@
                         <img src="~/img/perfil/@p.FotoUsuario" alt="Foto do perfil do amigo Gabi Gordo">
                         <div class="texto">
                             <p class="nome-publicacao">@p.Username</p>
-                            <p>Flamengo, RJ</p>
+                            <p>São Paulo, SP</p>
                         </div>
                     </ul>
                 </div>
@@ -96,13 +95,12 @@
                 <div class="cont">
                     <div class="coments">
                         <div class="flex-center">
-                            <div class="coracao">
-                                <label><img src="./img/img-feed/Vectors2.svg" alt="Coração de like"  id="1" onclick="mudarImagem(1);"></label>
-                            </div>
-                            <div class="balao">
+                            <a asp-area="" asp-controller="Feed" asp-action="Curtir" asp-route-id="@p.IdPublicacao">
+                                <img class="coracao" id="p.IdPublicacao" src="./img/img-perfil/like.svg" alt="" onclick="curtir(@p.IdPublicacao)">
+                            </a>
+                            <div class="balao" id="@p.Imagem">
                                 <img src="./img/img-feed/Vectorbalao.svg" alt="">
                             </div>
-
                             <form class="comentar" method="POST" action='@Url.Action("Comentar")' enctype="multipart/form-data" >
                                 <input name="IdPublicacao" value="@p.IdPublicacao" type="hidden">
                                 <input type="text"  placeholder="Comentar..." name="Mensagem" required />
@@ -112,20 +110,26 @@
                     </div>
                 </div>
                 <div class="text">
-                    <h5 class="curtidas">2077 curtidas</h5>
+                    <h5 class="curtidas">@p.Likes curtidas</h5>
                 </div>
-                @foreach (Comentario c in ViewBag.Comentarios)
-                {
-                    @if(p.IdPublicacao == c.IdPublicacao)
+                <ul class="box-comments">
+                    @foreach (Comentario c in ViewBag.Comentarios)
                     {
-                        <div class="coments">
-                            <ul class="flex-center">
-                                <h4>@c.Username</h4>
-                                <p>@c.Mensagem</p>
-                            </ul>
-                        </div>
+                        @if(p.IdPublicacao == c.IdPublicacao)
+                        {
+                            <li>
+                                <div class="comment">
+                                    <div class="comment-feed">
+                                        <h3>@c.Username</h3>
+                                        <p>@c.Mensagem</p>
+                                    </div>
+                                    <img class="heart" id="@c.IdComentario" src="./img/img-perfil/like.svg" alt="" onclick="curtir(@c.IdComentario)">
+                                    <a class="trash" asp-area="" asp-controller="Feed" asp-action="ExcluirComentario" asp-route-id="@c.IdComentario"><i class="far fa-trash-alt"></i></a>
+                                </div>
+                            </li>
+                        }
                     }
-                }
+                </ul>
             </div>
         }
     </section>        
