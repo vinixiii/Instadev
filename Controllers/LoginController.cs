@@ -28,8 +28,8 @@ namespace Instadev_06.Controllers
 
             var logado = csv.Find(
                 x => 
-                x.Split(";")[5] == form["Email"] && 
-                x.Split(";")[6] == form["Senha"]
+                (x.Split(";")[5] == form["Email"] && x.Split(";")[6] == form["Senha"]) ||
+                (x.Split(";")[4] == form["Email"] && x.Split(";")[6] == form["Senha"])
             );
 
             if(logado != null)
@@ -40,7 +40,7 @@ namespace Instadev_06.Controllers
                 return LocalRedirect("~/Feed");
             }
 
-            Mensagem = "Tente novamente.";
+            Mensagem = "Dados incorretos! Tente novamente.";
 
 
             return LocalRedirect("~/");

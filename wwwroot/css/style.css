@@ -1560,3 +1560,8 @@ span.psw {
 .friends input {
     display: none;
 }
+
+.erro {
+    font-size: 1.2rem;
+    color: red;
+}

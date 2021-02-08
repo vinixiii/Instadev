@@ -9,6 +9,9 @@ namespace Instadev_06.Controllers
     [Route("Feed")]
     public class FeedController : Controller
     {
+        [TempData]
+        public string Mensagem2 { get; set; }
+        
         Usuario usuarioModel = new Usuario();
         Publicacao publicacaoModel = new Publicacao();
         Comentario comentarioModel = new Comentario();
