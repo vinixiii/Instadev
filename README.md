@@ -13,7 +13,7 @@ O **Instadev** é uma aplicação web clone do Instagram, densenvolvida no 1º s
 
 Além de mim, os desenvolvedores que participaram em todas as partes do projeto, desde o planejamento até as últimas atualizações, foram: *[Taila Franco](https://github.com/vinixiii)*, *[Lameck Vieira](https://github.com/vinixiii)*, e *[Leandro Rangel](https://github.com/vinixiii)*
 
-## Funcionalidades
+## Funcionalidades 📌
 Nossa aplicação contém todas as funcionalidades mínimas solicitadas, e algumas funcionalidades extras:
 
 <h3 align="center">Cadastro</h3>
