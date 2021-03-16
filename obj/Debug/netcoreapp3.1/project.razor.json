@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\vinixiii\\Desktop\\Instadev-06\\Instadev-06.csproj",
+  "FilePath": "c:\\Users\\vinixiii\\Desktop\\Instadev\\Instadev-06.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -14392,52 +14392,52 @@
   "RootNamespace": "Instadev_06",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\vinixiii\\Desktop\\Instadev-06\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\vinixiii\\Desktop\\Instadev-06\\Views\\Amigo\\Index.cshtml",
-      "TargetPath": "Views\\Amigo\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\vinixiii\\Desktop\\Instadev-06\\Views\\Cadastro\\Index.cshtml",
-      "TargetPath": "Views\\Cadastro\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\vinixiii\\Desktop\\Instadev-06\\Views\\Perfil\\Index.cshtml",
-      "TargetPath": "Views\\Perfil\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\vinixiii\\Desktop\\Instadev-06\\Views\\Feed\\Index.cshtml",
+      "FilePath": "c:\\Users\\vinixiii\\Desktop\\Instadev\\Views\\Feed\\Index.cshtml",
       "TargetPath": "Views\\Feed\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\vinixiii\\Desktop\\Instadev-06\\Views\\EditarPerfil\\Index.cshtml",
+      "FilePath": "c:\\Users\\vinixiii\\Desktop\\Instadev\\Views\\Cadastro\\Index.cshtml",
+      "TargetPath": "Views\\Cadastro\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\vinixiii\\Desktop\\Instadev\\Views\\EditarPerfil\\Index.cshtml",
       "TargetPath": "Views\\EditarPerfil\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\vinixiii\\Desktop\\Instadev-06\\Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FilePath": "c:\\Users\\vinixiii\\Desktop\\Instadev\\Views\\Perfil\\Index.cshtml",
+      "TargetPath": "Views\\Perfil\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\vinixiii\\Desktop\\Instadev-06\\Views\\Login\\Index.cshtml",
+      "FilePath": "c:\\Users\\vinixiii\\Desktop\\Instadev\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\vinixiii\\Desktop\\Instadev\\Views\\Amigo\\Index.cshtml",
+      "TargetPath": "Views\\Amigo\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\vinixiii\\Desktop\\Instadev\\Views\\Login\\Index.cshtml",
       "TargetPath": "Views\\Login\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\vinixiii\\Desktop\\Instadev-06\\Views\\_ViewStart.cshtml",
+      "FilePath": "c:\\Users\\vinixiii\\Desktop\\Instadev\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\vinixiii\\Desktop\\Instadev-06\\Views\\_ViewImports.cshtml",
+      "FilePath": "c:\\Users\\vinixiii\\Desktop\\Instadev\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\vinixiii\\Desktop\\Instadev\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     }

@@ -503,6 +503,11 @@ body {
     border-radius: 50%;
 }
 
+.menu li:last-child img {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+}
 
 /* JavaScript Classes */
 
